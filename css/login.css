@@ -1,0 +1,1011 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --page-bg: #17283b;
+    --white: #ffffff;
+    --blue-light: #9bdcff;
+    --blue-text: #315c91;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html,
+body {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: var(--page-bg);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    color: var(--white);
+    background: var(--page-bg);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    display: block;
+    max-width: none;
+}
+
+/* =========================================================
+   LOGIN PAGE + BACKGROUND
+========================================================= */
+
+.login-page {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100dvh;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--page-bg);
+}
+
+.login-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.015);
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.login-background-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(7,20,37,.13) 0%, rgba(7,20,37,.03) 38%, rgba(7,20,37,.2) 100%);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.login-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: max(54px, calc(var(--safe-top) + 20px)) 22px 0;
+}
+
+.priority-brand {
+    display: block;
+    width: clamp(170px, 46vw, 220px);
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.priority-brand-image {
+    width: 100%;
+    height: auto;
+        margin-top: -152px;
+    object-fit: contain;
+}
+
+.header-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    flex: 0 0 auto;
+}
+
+.language-button,
+.notification-button {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 48px;
+    overflow: hidden;
+    border: 1px solid rgba(135,190,223,.08);
+    border-radius: 50%;
+    background: rgba(8,28,49,.48);
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.language-button:active,
+.notification-button:active {
+    transform: scale(.93);
+    background: rgba(17,51,77,.65);
+}
+
+.language-icon-img {
+width: 125px;
+    height: 245px;
+    margin-top: -100px;
+    margin-left: -39px;
+    pointer-events: none;
+}
+
+.notification-icon-img {
+     width: 75px;
+    height: 100px;
+    margin-top: -27px;
+    margin-left: -14px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.support-button {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 58px;
+    transition: transform 160ms ease;
+}
+
+.support-button:active {
+    transform: scale(.94);
+}
+
+.support-icon-img {
+  width: 178px;
+    height: 184px;
+    margin-top: -75px;
+    margin-left: -60px;
+    object-fit: contain;
+    pointer-events: none;
+}
+/* Khung giữ icon */
+.security-icon{
+
+    width:32px;
+    height:32px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:20px;
+
+    flex:none;
+
+}
+
+/* Chỉ chỉnh icon ở đây */
+.security-icon-img{
+    width: 120px;
+    height: 220px;
+       margin-top: -84px;
+    object-fit: contain;
+    display: block;
+    flex: none;
+    pointer-events: none;
+
+}
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+/* =========================================================
+   LOGIN GLASS CARD – SÁNG VÀ TRONG HƠN
+========================================================= */
+
+.login-card {
+    position: absolute;
+    left: 50%;
+    top: 34%;
+    z-index: 5;
+
+    width: calc(100% - 46px);
+    max-width: 420px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(156, 218, 250, 0.48);
+
+    border-radius: 22px;
+
+    transform: translateX(-50%);
+
+    /*
+        Màu kính nhạt hơn.
+        Không dùng nền xanh đậm như trước.
+    */
+    background:
+        rgba(42, 82, 116, 0.14);
+
+    /*
+        Blur thấp hơn để vẫn thấy rõ hình phía sau.
+    */
+  backdrop-filter:blur(7px)saturate(100%)brightness(1.02);
+
+    -webkit-backdrop-filter:
+        blur(9px)
+        saturate(120%)
+        brightness(1.02);
+
+    box-shadow:
+        0 18px 42px rgba(2, 15, 29, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
+
+    animation:
+        loginCardEnter
+        650ms
+        cubic-bezier(0.2, 0.8, 0.2, 1)
+        both;
+}
+
+
+/* Lớp phủ kính rất nhẹ */
+.login-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(112, 170, 210, 0.14) 0%,
+            rgba(43, 82, 116, 0.07) 52%,
+            rgba(12, 42, 68, 0.16) 100%
+        );
+}
+
+
+/* Ánh sáng phản chiếu */
+.login-card::after {
+    content: "";
+
+    position: absolute;
+    top: -50%;
+    left: -32%;
+    z-index: -1;
+
+    width: 78%;
+    height: 145%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent 20%,
+            rgba(255, 255, 255, 0.11) 48%,
+            transparent 76%
+        );
+
+    transform: rotate(12deg);
+}
+.login-background-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 20, 37, 0.07) 0%,
+            rgba(7, 20, 37, 0.01) 40%,
+            rgba(7, 20, 37, 0.10) 100%
+        );
+}
+.login-card-content {
+        position: relative;
+    z-index: 2;
+    padding: 1px 28px 22px;
+
+}
+
+.security-icon {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 21px;
+    color: rgba(240,248,246,.95);
+    filter: drop-shadow(0 3px 8px rgba(0,0,0,.2));
+}
+
+.security-icon i {
+    font-size: 30px;
+}
+
+.login-greeting {
+top: 11px;
+    position: relative;
+    margin: 0 0 11px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, .96);
+}
+
+.customer-name {
+        display: flex;
+    flex-direction: column;
+    margin: 0;
+    position: relative;
+    top: 10px;
+    padding-right: 86px;
+    font-size: clamp(31px, 9vw, 43px);
+    font-weight: 300;
+    line-height: 1.07;
+    letter-spacing: -1px;
+    color: #fff;
+}
+
+.customer-name span + span {
+    margin-top: 5px;
+}
+
+.face-id-button {
+   position: absolute;
+    top: 130px;
+    right: 27px;
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(133, 205, 242, .09);
+    border-radius: 50%;
+    color: #8ed7f6;
+    background: rgba(9, 35, 59, .45);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.face-id-button i {
+    font-size: 32px;
+}
+
+.face-id-button:active {
+    transform: scale(.92);
+    background: rgba(18,58,87,.65);
+}
+
+.password-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    min-height: 58px;
+        margin-top: 26px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(185,220,239,.45);
+}
+
+.password-placeholder {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+    color: rgba(255,255,255,.7);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.password-placeholder.is-hidden {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-4px);
+}
+
+.password-dots {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.password-dots.is-visible {
+    display: flex;
+}
+
+.password-dots span {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.25);
+    opacity: 0;
+    transform: scale(.55);
+    transition: opacity 150ms ease, transform 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.password-dots span.is-active {
+    opacity: 1;
+    background: #fff;
+    transform: scale(1);
+    box-shadow: 0 0 6px rgba(255,255,255,.28);
+}
+
+.password-toggle {
+    width: 42px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 42px;
+    color: rgba(131,196,231,.76);
+    transition: color 150ms ease, transform 150ms ease;
+}
+
+.password-toggle i {
+        font-size: 25px;
+    margin-left: -10px;
+}
+
+.password-toggle:active {
+    color: #a5e1fb;
+    transform: scale(.92);
+}
+
+.login-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding-top: 19px;
+}
+
+.login-option-button {
+    min-height: 34px;
+    font-size: 16px;
+    font-weight: 650;
+    line-height: 1.2;
+    color: rgba(255,255,255,.97);
+    transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.login-option-button:active {
+    opacity: .65;
+    transform: scale(.98);
+}
+/*====================================================
+  KHUNG ICON (KHÔNG CHỈNH)
+====================================================*/
+
+.scan-icon-box{
+
+    position:relative;
+
+    width:32px;
+    height:32px;
+
+    flex:0 0 32px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:visible;
+
+}
+
+
+/*====================================================
+  ICON (CHỈ CHỈNH PHẦN NÀY)
+====================================================*/
+
+.scan-icon-img{
+position: absolute;
+    top: 33%;
+    left: 42%;
+    width: 190px;
+    height: 283px;
+    object-fit: contain;
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center;
+    pointer-events: none;
+
+}
+.login-submit-button {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 0 0 21px 21px;
+    font-size: 21px;
+    font-weight: 650;
+    letter-spacing: .1px;
+    color: var(--blue-text);
+    background: var(--blue-light);
+    opacity: .72;
+    transition: filter 150ms ease, transform 150ms ease, opacity 150ms ease;
+}
+
+.login-submit-button.is-ready {
+    opacity: 1;
+}
+
+.login-submit-button:not(.is-ready) {
+    cursor: default;
+}
+
+.login-submit-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,0));
+}
+
+.login-submit-button:active {
+    filter: brightness(.94);
+}
+
+.login-submit-button.is-loading {
+    pointer-events: none;
+    opacity: .75;
+}
+
+.login-submit-button.is-loading span:first-child {
+    opacity: 0;
+}
+
+.login-button-loader {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    display: none;
+    border: 3px solid rgba(44,88,139,.3);
+    border-top-color: var(--blue-text);
+    border-radius: 50%;
+    animation: loginSpinner 700ms linear infinite;
+}
+
+.login-submit-button.is-loading .login-button-loader {
+    display: block;
+}
+
+/* =========================================================
+   BOTTOM SERVICES + EXPAND
+========================================================= */
+
+.bottom-services {
+    position: absolute;
+    left: 50%;
+    bottom: max(72px, calc(var(--safe-bottom) + 58px));
+    z-index: 5;
+    width: calc(100% - 48px);
+    max-width: 420px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    transform: translateX(-50%);
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1.2;
+    text-align: center;
+    color: #fff;
+    transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.service-item:active {
+    transform: scale(.95);
+    opacity: .72;
+}
+
+/* =========================================================
+   BOTTOM SERVICES
+========================================================= */
+
+.bottom-services {
+    position: absolute;
+    left: 50%;
+    bottom: max(
+        72px,
+        calc(env(safe-area-inset-bottom) + 58px)
+    );
+    z-index: 5;
+
+    width: calc(100% - 48px);
+    max-width: 420px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+
+    transform: translateX(-50%);
+}
+
+
+/* =========================================================
+   SERVICE ITEM
+========================================================= */
+
+.service-item {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+
+    color: #ffffff;
+    background: transparent;
+
+    text-align: center;
+
+    transition:
+        transform 160ms ease,
+        opacity 160ms ease;
+}
+
+.service-item:active {
+    transform: scale(0.95);
+    opacity: 0.72;
+}
+
+.service-label {
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   KHUNG ICON CHUNG — KHÔNG CHỈNH KÍCH THƯỚC
+========================================================= */
+
+.service-icon-box {
+    position: relative;
+
+    width: 46px;
+    height: 39px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 39px;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   ICON QUÉT QR
+========================================================= */
+
+.qr-service-img {
+      position: absolute;
+    top: 49%;
+    left: 50%;
+    width: 100px;
+    height: 230px;
+    object-fit: contain;
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center;
+    pointer-events: none;
+}
+
+/* ==========================================
+   NÚT MỞ RỘNG
+========================================== */
+
+.expand-button{
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    background:transparent;
+    cursor:pointer;
+}
+
+
+/* Khung cố định - KHÔNG sửa */
+
+.expand-icon-box{
+    position:relative;
+
+    width:26px;
+    height:26px;
+
+    flex:0 0 26px;
+
+    overflow:visible;
+}
+
+
+/* Chỉ sửa class này */
+
+.expand-icon-img{
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    width:26px;
+    height:26px;
+
+    object-fit:contain;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    transform-origin:center;
+
+    pointer-events:none;
+}
+/* =========================================================
+   ICON D-OTP
+========================================================= */
+
+.otp-service-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+   width: 98px;
+    height: 220px;
+
+    object-fit: contain;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+
+    transform-origin: center;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ICON THAY ẢNH NỀN
+========================================================= */
+
+.background-service-img {
+     position: absolute;
+    top: 28%;
+    left: 76%;
+    width: 140px;
+    height: 262px;
+    object-fit: contain;
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   NHÃN NEW
+========================================================= */
+
+.service-new-badge {
+    position: absolute;
+    top: -7px;
+    right: -14px;
+
+    padding: 2px 6px;
+
+    border-radius: 3px;
+
+    font-size: 10px;
+    font-weight: 750;
+    line-height: 1.2;
+
+    color: #ffffff;
+    background: #e63a62;
+
+    pointer-events: none;
+}
+
+.expand-button {
+    position: absolute;
+    left: 50%;
+    bottom: max(19px, calc(var(--safe-bottom) + 8px));
+    z-index: 5;
+    width: 48px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    color: rgba(255,255,255,.52);
+    transform: translateX(-50%);
+    animation: expandButtonMove 1.6s ease-in-out infinite;
+}
+
+.expand-button i {
+    font-size: 35px;
+}
+
+/* =========================================================
+   ANIMATIONS + RESPONSIVE
+========================================================= */
+
+@keyframes loginCardEnter {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px) scale(.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+
+@keyframes loginSpinner {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes expandButtonMove {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+@media (max-width: 374px) {
+    .login-header {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .priority-brand {
+        width: 155px;
+    }
+
+    .header-actions {
+        gap: 10px;
+    }
+
+    .language-button,
+    .notification-button {
+        width: 44px;
+        height: 44px;
+        flex-basis: 44px;
+    }
+
+    .support-button {
+        width: 54px;
+        height: 54px;
+        flex-basis: 54px;
+    }
+
+    .language-icon-img {
+        width: 29px;
+        height: 29px;
+    }
+
+    .notification-icon-img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .support-icon-img {
+        width: 54px;
+        height: 54px;
+    }
+
+    .login-card {
+        top: 32%;
+        width: calc(100% - 30px);
+    }
+
+    .login-card-content {
+        padding-right: 22px;
+        padding-left: 22px;
+    }
+
+    .face-id-button {
+        right: 22px;
+    }
+
+    .customer-name {
+        font-size: 32px;
+    }
+
+    .login-options {
+        gap: 10px;
+    }
+
+    .login-option-button {
+        font-size: 14px;
+    }
+
+    .bottom-services {
+        width: calc(100% - 22px);
+    }
+
+    .service-item {
+        font-size: 12px;
+    }
+}
+
+@media (max-height: 700px) {
+    .login-card {
+        top: 27%;
+        transform: translateX(-50%) scale(.92);
+        transform-origin: center top;
+    }
+
+    .bottom-services {
+        bottom: max(51px, calc(var(--safe-bottom) + 40px));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login-card,
+    .expand-button,
+    .login-button-loader {
+        animation: none;
+    }
+}

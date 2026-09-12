@@ -1,0 +1,462 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --sheet-background: #fbfaff;
+    --text-main: #172f3e;
+    --text-muted: #777a84;
+    --primary-blue: #0968b8;
+
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #333333;
+
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+
+    color: var(--text-main);
+    background: #333333;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Segoe UI",
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    overscroll-behavior: none;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    outline: 0;
+
+    color: inherit;
+    background: transparent;
+
+    font: inherit;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.bill-detail-page {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    min-height: 100dvh;
+
+    overflow: hidden;
+
+    background: #333333;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.bill-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.78);
+
+    opacity: 0;
+
+    animation: billOverlayShow 320ms ease forwards;
+}
+
+
+/* =========================================================
+   BOTTOM SHEET
+========================================================= */
+
+.bill-sheet {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 430px;
+    height: min(90dvh, 810px);
+
+    margin: 0 auto;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    border:
+        1px solid
+        rgba(178, 199, 222, 0.62);
+
+    border-bottom: 0;
+    border-radius: 30px 30px 0 0;
+
+    color: var(--text-main);
+    background: var(--sheet-background);
+
+    box-shadow:
+        0 -18px 48px
+        rgba(0, 0, 0, 0.25);
+
+    transform: translate3d(0, 105%, 0);
+
+    animation:
+        billSheetShow
+        440ms
+        cubic-bezier(0.22, 0.82, 0.22, 1)
+        60ms
+        forwards;
+
+    will-change: transform;
+
+    scrollbar-width: none;
+}
+
+.bill-sheet::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================================
+   DRAG AREA
+========================================================= */
+
+.bill-drag-area {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    height: 45px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding-top: 13px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--sheet-background) 0%,
+            var(--sheet-background) 78%,
+            rgba(251, 250, 255, 0) 100%
+        );
+
+    touch-action: none;
+}
+
+.bill-handle {
+    width: 44px;
+    height: 4px;
+
+    display: block;
+
+    border-radius: 999px;
+
+    background: #315d94;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.bill-sheet-content {
+    padding:
+        0
+        24px
+        calc(38px + var(--safe-bottom));
+}
+
+.bill-title {
+    margin: 0 0 31px;
+
+    color: var(--primary-blue);
+
+    font-size: 23px;
+    font-weight: 650;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.bill-amount {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 19px;
+}
+
+.bill-amount-icon {
+    width: 27px;
+    height: 27px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 27px;
+
+    color: #173846;
+}
+
+.bill-amount-icon i {
+    font-size: 25px;
+}
+
+.bill-amount strong {
+    color: #17303f;
+
+    font-size: 24px;
+    font-weight: 420;
+    line-height: 1.1;
+    letter-spacing: -0.4px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.bill-transfer-title {
+    margin: 0 0 16px;
+
+    color: #18313f;
+
+    font-size: 17px;
+    font-weight: 650;
+    line-height: 1.25;
+}
+
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.bill-information {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.bill-row {
+    display: grid;
+    grid-template-columns:
+        minmax(90px, 0.9fr)
+        minmax(0, 1.35fr);
+
+    gap: 15px;
+    align-items: start;
+}
+
+.bill-label {
+    color: var(--text-muted);
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.bill-value {
+    min-width: 0;
+
+    color: #2c2d32;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+.bill-content-row .bill-value {
+    font-weight: 650;
+    line-height: 1.43;
+}
+
+
+/* =========================================================
+   CLOSE ANIMATION
+========================================================= */
+
+.bill-detail-page.is-closing .bill-overlay {
+    animation:
+        billOverlayHide
+        300ms
+        ease
+        forwards;
+}
+
+.bill-detail-page.is-closing .bill-sheet {
+    animation:
+        billSheetHide
+        360ms
+        cubic-bezier(0.4, 0, 1, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes billOverlayShow {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes billOverlayHide {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes billSheetShow {
+    from {
+        transform: translate3d(0, 105%, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes billSheetHide {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 105%, 0);
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 374px) {
+    .bill-sheet {
+        height: min(91dvh, 780px);
+
+        border-radius: 27px 27px 0 0;
+    }
+
+    .bill-sheet-content {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .bill-title {
+        margin-bottom: 26px;
+
+        font-size: 21px;
+    }
+
+    .bill-amount strong {
+        font-size: 22px;
+    }
+
+    .bill-row {
+        grid-template-columns:
+            minmax(85px, 0.84fr)
+            minmax(0, 1.36fr);
+
+        gap: 11px;
+    }
+
+    .bill-label,
+    .bill-value {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP PREVIEW
+========================================================= */
+
+@media (min-width: 600px) {
+    body {
+        background: #333333;
+    }
+
+    .bill-detail-page {
+        width: 430px;
+        margin: 0 auto;
+    }
+
+    .bill-overlay {
+        left: 50%;
+
+        width: 430px;
+
+        transform: translateX(-50%);
+    }
+}

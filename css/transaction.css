@@ -1,0 +1,2772 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #ffffff;
+
+    --page-background: #f8f9ff;
+    --section-background: #ffffff;
+
+    --text-main: #172f3e;
+    --text-secondary: #315b8f;
+    --text-muted: #6e7480;
+
+    --blue: #0669bd;
+    --blue-dark: #324d78;
+    --blue-light: #dff3ff;
+
+    --green: #55c979;
+
+    --border: #d1dced;
+    --border-light: #e1e7f1;
+
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+
+    background: var(--page-background);
+
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+
+    overflow-x: hidden;
+
+    color: var(--text-main);
+    background: var(--page-background);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Segoe UI",
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    overscroll-behavior-y: none;
+}
+
+button,
+input {
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    outline: none;
+
+    color: inherit;
+    background: transparent;
+
+    font: inherit;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.transaction-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    padding-bottom:
+        calc(45px + var(--safe-bottom));
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0,
+            #fbfcff 23%,
+            #f7f8ff 100%
+        );
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+/* .transaction-sheet-title {
+      margin: 0 0 31px;
+    color: #0c518b;
+    position: relative;
+    font-size: 19px;
+    margin-top: -2px;
+    font-weight: 550;
+    line-height: 1.2;
+    text-align: center;
+} */
+.transaction-sheet-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 38px;
+    overflow: visible;
+}
+
+/* Ảnh tiền vào */
+.transaction-sheet-income-icon-img {
+        width: 117px;
+    height: 250px;
+    margin-top: -109px;
+    margin-left: -12px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Ảnh tiền ra */
+.transaction-sheet-outcome-icon-img {
+       width: 117px;
+    height: 250px;
+    margin-top: -118px;
+    margin-left: -12px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.transaction-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    min-height: calc(118px + var(--safe-top));
+
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: end;
+
+    padding-top: calc(var(--safe-top) + 24px);
+    padding-right: 24px;
+    padding-bottom: 22px;
+    padding-left: 24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.99) 0%,
+            rgba(255, 255, 255, 0.98) 78%,
+            rgba(247, 250, 253, 0.98) 100%
+        );
+
+    border-bottom: 1px solid rgba(220, 229, 238, 0.65);
+
+    box-shadow:
+        0 7px 14px rgba(45, 72, 96, 0.08);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.account-detail-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    min-height: calc(118px + var(--safe-top));
+
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: end;
+
+    padding:
+        calc(var(--safe-top) + 24px)
+        24px
+        22px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #ffffff 80%,
+            #f5f8fb 100%
+        );
+.transaction-sheet-icon{
+    width:40px;
+    height:40px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+}
+
+/* Tiền vào */
+.transaction-sheet-income-icon-img{
+    width:50px;
+    height:50px;
+
+    display:block;
+    object-fit:contain;
+    object-position:center;
+
+    pointer-events:none;
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+/* Tiền ra */
+.transaction-sheet-outcome-icon-img{
+    width:30px;
+    height:30px;
+
+    display:block;
+    object-fit:contain;
+    object-position:center;
+
+    pointer-events:none;
+    user-select:none;
+    -webkit-user-drag:none;
+}
+    border-bottom:
+        1px solid
+        rgba(216, 226, 236, 0.7);
+
+    box-shadow:
+        0 8px 15px
+        rgba(47, 75, 99, 0.075);
+}
+.transaction-header::after {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    left: 0;
+
+    height: 8px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(218, 228, 237, 0.32),
+            rgba(241, 246, 250, 0)
+        );
+
+    pointer-events: none;
+}
+.transaction-header h1 {
+    margin: 0;
+
+    font-size: clamp(25px, 7.4vw, 34px);
+    font-weight: 650;
+    line-height: 1.15;
+    text-align: left;
+
+    color: #345c90;
+}
+
+.transaction-back-button,
+.transaction-home-button {
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+    place-items: center;
+
+    transition:
+        opacity 150ms ease,
+        transform 150ms ease;
+}
+
+.transaction-back-button {
+    justify-self: start;
+
+    color: #2d6198;
+}
+
+.transaction-home-button {
+    justify-self: end;
+
+    color: #172f3e;
+}
+
+.transaction-back-button i {
+    font-size: 38px;
+}
+
+.transaction-home-button i {
+    font-size: 35px;
+}
+
+.transaction-back-button:active,
+.transaction-home-button:active {
+    opacity: 0.65;
+    transform: scale(0.9);
+}
+
+
+/* =========================================================
+   ACCOUNT DETAIL SECTION
+========================================================= */
+
+.account-detail-section {
+    padding:
+        28px
+        23px
+        25px;
+
+    background:
+        radial-gradient(
+            circle at 8% 88%,
+            rgba(216, 251, 249, 0.55),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 91% 65%,
+            rgba(238, 228, 252, 0.38),
+            transparent 30%
+        ),
+        #fbfcff;
+}
+
+
+/* =========================================================
+   ACCOUNT IDENTITY
+========================================================= */
+
+.account-identity-card {
+    min-height: 108px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(247, 248, 255, 0.96),
+            rgba(250, 249, 255, 0.96)
+        );
+
+    box-shadow:
+        0 5px 13px
+        rgba(48, 82, 110, 0.035);
+}
+
+.account-owner-name {
+    margin: 0 0 9px;
+
+    color: #0867ba;
+
+    font-size: 18px;
+    font-weight: 450;
+    line-height: 1.2;
+}
+
+.account-detail-number {
+    margin: 0;
+
+    color: var(--text-main);
+
+    font-size: clamp(24px, 7.4vw, 32px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.1px;
+}
+
+.copy-account-button {
+    width: 50px;
+    height: 50px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 50px;
+
+    color: #0568bc;
+
+    transition:
+        transform 150ms ease,
+        opacity 150ms ease;
+}
+
+.copy-account-button i {
+    font-size: 34px;
+}
+
+.copy-account-button:active {
+    opacity: 0.65;
+    transform: scale(0.9);
+}
+
+
+/* =========================================================
+   BALANCE
+========================================================= */
+
+.account-balance-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 27px 0 33px;
+}
+
+.account-balance-info > p {
+    margin: 0 0 11px;
+
+    font-size: 18px;
+    font-weight: 420;
+
+    color: #213746;
+}
+
+.account-balance-value {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.account-balance-value strong {
+    font-size: clamp(43px, 12vw, 56px);
+    font-weight: 400;
+    line-height: 1;
+
+    letter-spacing: -1.7px;
+}
+
+.account-balance-value span {
+    font-size: 27px;
+    font-weight: 650;
+}
+
+/* .account-qr-button {
+    width: 64px;
+    height: 64px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 64px;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+    background: #0871c4;
+
+    box-shadow:
+        0 9px 19px
+        rgba(16, 83, 139, 0.18);
+
+    transition:
+        transform 150ms ease,
+        filter 150ms ease;
+} */
+
+.account-qr-button i {
+    font-size: 35px;
+}
+
+.account-qr-button:active {
+    filter: brightness(0.92);
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   DEFAULT ACCOUNT
+========================================================= */
+
+.default-account-card {
+    min-height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    padding: 20px 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 5px 14px
+        rgba(42, 77, 107, 0.045);
+}
+
+.default-account-card > span {
+    font-size: clamp(18px, 5.4vw, 25px);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.default-account-button {
+    min-width: 109px;
+    height: 47px;
+
+    padding: 0 18px;
+
+    border-radius: 27px;
+
+    font-size: 17px;
+    font-weight: 650;
+
+    color: #80909a;
+    background: #d9f2ff;
+
+    transition:
+        transform 150ms ease,
+        color 150ms ease,
+        background-color 150ms ease;
+}
+
+.default-account-button:active {
+    transform: scale(0.96);
+}
+
+.default-account-button:not(.is-selected) {
+    color: #ffffff;
+    background: #116eb9;
+}
+
+
+/* =========================================================
+   ACCOUNT ACTION SLIDER
+========================================================= */
+
+.account-action-slider {
+    width: calc(
+        100% + var(--transaction-side-space)
+    );
+
+    margin-top: 25px;
+    margin-right: calc(
+        var(--transaction-side-space) * -1
+    );
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+}
+
+.account-action-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.account-action-track {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+
+    width: max-content;
+
+    padding-right: var(--transaction-side-space);
+}
+
+.account-action-card {
+    width: 112px;
+    min-width: 112px;
+    height: 158px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding: 20px 14px 16px;
+
+    border: 1px solid var(--transaction-border);
+    border-radius: 8px;
+
+    color: #1c3545;
+    background: #ffffff;
+
+    text-align: left;
+
+    box-shadow:
+        0 6px 16px rgba(43, 77, 105, 0.055);
+
+    scroll-snap-align: start;
+}
+.account-action-card:active {
+    opacity: 0.72;
+    transform: scale(0.97);
+}
+
+.account-action-icon{
+    width:58px;
+    height:58px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+}
+/* Chuyển tiền */
+.account-transfer-icon-img{
+       width: 205px;
+    margin-top: -98px;
+    height: 220px;
+}
+
+/* Xuất sao kê */
+.account-statement-icon-img{
+      width: 170px;
+    margin-top: -69px;
+    height: 190px;
+    margin-left: -11px;
+}
+
+/* Apple */
+.account-apple-icon-img{
+    width: 130px;
+    margin-top: -77px;
+    margin-left: -4px;
+    height: 180px;
+}
+
+/* Cài đặt */
+.account-setting-icon-img{
+    width:28px;
+    height:28px;
+}
+.account-action-icon img{
+    display:block;
+    object-fit:contain;
+    object-position:center;
+
+    pointer-events:none;
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+.account-action-icon i {
+    font-size: 34px;
+}
+
+.apple-wallet-icon {
+    border-radius: 10px;
+
+    color: #ffffff;
+    background: #050505;
+}
+
+.apple-wallet-icon i {
+    font-size: 26px;
+}
+
+.account-action-card > span:last-child {
+    font-size: 21px;
+    font-weight: 430;
+    line-height: 1.35;
+
+    color: #213746;
+}
+
+
+/* =========================================================
+   QUERY SECTION
+========================================================= */
+
+.transaction-query-section {
+    padding:
+        23px
+        23px
+        28px;
+
+    background: #fbfaff;
+}
+
+.transaction-query-section h2 {
+    margin: 0 0 24px;
+
+    font-size: clamp(27px, 8vw, 38px);
+    font-weight: 650;
+    line-height: 1.2;
+}
+
+.date-query-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.date-query-card {
+    position: relative;
+
+    min-height: 102px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding:
+        15px
+        48px
+        15px
+        16px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    text-align: left;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 5px 13px
+        rgba(39, 73, 103, 0.045);
+}
+
+.date-query-label {
+    margin-bottom: 7px;
+
+    color: #0869bb;
+
+    font-size: 17px;
+    font-weight: 450;
+}
+
+.date-query-card strong {
+    font-size: 19px;
+    font-weight: 450;
+    line-height: 1.2;
+}
+
+.date-query-card i {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+
+    color: #0868bb;
+
+    font-size: 32px;
+
+    transform: translateY(-50%);
+}
+
+.date-query-card input {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    cursor: pointer;
+}
+
+.transaction-query-button {
+    position: relative;
+
+    width: 100%;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 18px;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    color: #ffffff;
+    background: #344e79;
+
+    font-size: 22px;
+    font-weight: 650;
+
+    transition:
+        filter 150ms ease,
+        transform 150ms ease;
+}
+
+.transaction-query-button:active {
+    filter: brightness(0.93);
+    transform: scale(0.99);
+}
+
+.transaction-query-button.is-loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.transaction-query-button.is-loading > span:first-child {
+    opacity: 0;
+}
+
+.transaction-query-loader {
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    display: none;
+
+    border: 3px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+
+    animation: querySpinner 700ms linear infinite;
+}
+
+.transaction-query-button.is-loading
+.transaction-query-loader {
+    display: block;
+}
+
+.transaction-query-note {
+    margin: 10px 0 0;
+
+    color: #375f92;
+
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   TRANSACTION HISTORY
+========================================================= */
+
+.transaction-history {
+    display: block;
+
+    padding:
+        14px
+        var(--transaction-side-space)
+        40px;
+
+    background: #faf9ff;
+}
+.transaction-history.is-visible {
+    display: block;
+
+    animation: transactionHistoryShow 350ms ease both;
+}
+
+.transaction-day-card {
+    margin-bottom: 22px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 6px 18px
+        rgba(49, 79, 106, 0.065);
+}
+
+.transaction-day-header {
+    min-height: 49px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 18px;
+
+    background: #edf1ff;
+}
+.transaction-type-icon{
+    width:40px;
+    height:40px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+}
+
+/* Icon Tiền vào */
+.transaction-income-icon-img{
+          width: 180px;
+    height: 170px;
+    margin-top: -55px;
+    margin-left: -14px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Icon Tiền ra */
+.transaction-outcome-icon-img{
+    width: 203px;
+    height: 197px;
+    margin-top: -74px;
+    margin-left: -14px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.transaction-day-header h3 {
+  margin: 0;
+    font-size: 19px;
+    font-weight: 550;
+}
+
+.transaction-list {
+    padding: 0 16px;
+}
+
+.transaction-item {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 12px;
+    padding: 10px 0 11px;
+    border-bottom: 1px solid #d9dfeb;
+}
+
+.transaction-item:last-child {
+    border-bottom: 0;
+}
+
+.transaction-type-icon {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    color: #0870c4;
+}
+
+.transaction-type-icon i {
+    font-size: 31px;
+}
+
+.transaction-information {
+       min-width: 0;
+    margin-left: -10px;
+    margin-top: 6px;
+}
+
+.transaction-primary-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.transaction-type {
+    flex: 0 0 auto;
+
+    font-size: 16px;
+    font-weight: 450;
+}
+
+.transaction-amount {
+       overflow: hidden;
+    font-size: 15px;
+    font-weight: 650;
+    text-align: right;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.transaction-amount.income {
+    color: var(--green);
+}
+
+.transaction-secondary-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+
+    margin-top: 11px;
+}
+
+.transaction-description {
+    min-width: 0;
+
+    color: #6e717a;
+}
+#sheetContent{
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    word-break: break-word;
+}
+.transaction-description p,
+.transaction-description span {
+    display: block;
+
+    margin: 0;
+
+    overflow: hidden;
+
+       font-size: 14px;
+    line-height: 1.45;
+
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+.transaction-description p {
+    margin-bottom: 2px;
+}
+
+.transaction-secondary-row time {
+    align-self: start;
+
+    color: #0867b6;
+
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   COPY TOAST
+========================================================= */
+
+.copy-toast {
+    position: fixed;
+    z-index: 100;
+
+    left: 50%;
+    bottom:
+        max(
+            24px,
+            calc(var(--safe-bottom) + 16px)
+        );
+
+    padding: 11px 17px;
+
+    border-radius: 22px;
+
+    color: #ffffff;
+    background:
+        rgba(20, 47, 69, 0.94);
+
+    box-shadow:
+        0 8px 25px
+        rgba(15, 39, 57, 0.22);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transform:
+        translateX(-50%)
+        translateY(12px);
+
+    transition:
+        opacity 220ms ease,
+        transform 220ms ease;
+}
+
+.copy-toast.is-visible {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes querySpinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes transactionHistoryShow {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 374px) {
+    .transaction-header {
+        grid-template-columns: 40px 1fr 40px;
+
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .transaction-header h1 {
+        font-size: 24px;
+    }
+
+    .account-detail-section,
+    .transaction-query-section,
+    .transaction-history {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .account-detail-number {
+        font-size: 25px;
+    }
+
+    .account-balance-value strong {
+        font-size: 44px;
+    }
+
+    .account-balance-value span {
+        font-size: 22px;
+    }
+
+    .default-account-card > span {
+        font-size: 18px;
+    }
+
+    .default-account-button {
+        min-width: 90px;
+        padding-right: 13px;
+        padding-left: 13px;
+    }
+
+    .account-action-slider {
+        width: calc(100% + 15px);
+        margin-right: -15px;
+    }
+
+    .account-action-card {
+        width: 137px;
+        min-width: 137px;
+    }
+
+    .date-query-grid {
+        gap: 9px;
+    }
+
+    .date-query-card {
+        padding-right: 39px;
+        padding-left: 12px;
+    }
+
+    .date-query-card i {
+        right: 10px;
+    }
+
+    .transaction-item {
+        grid-template-columns: 35px minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .transaction-primary-row {
+        align-items: flex-start;
+    }
+
+    .transaction-type,
+    .transaction-amount {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP PREVIEW
+========================================================= */
+
+@media (min-width: 600px) {
+    body {
+        background: #edf2f5;
+    }
+
+    .transaction-page {
+        width: 430px;
+        margin: 0 auto;
+
+        box-shadow:
+            0 0 40px
+            rgba(26, 58, 83, 0.13);
+    }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+/* =========================================================
+   FIX GIAO DIỆN TRANSACTION THEO ẢNH MẪU
+   Dán toàn bộ phần này vào CUỐI transaction.css
+========================================================= */
+
+:root {
+    --transaction-page-width: 430px;
+    --transaction-side-space: 24px;
+    --transaction-navy: #172f3e;
+    --transaction-title-blue: #345d91;
+    --transaction-primary-blue: #0769bd;
+    --transaction-border: #cfdaeb;
+    --transaction-dark-button: #344e79;
+}
+.transaction-out-overlay {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.transaction-out-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.transaction-out-sheet {
+    transform: translate3d(0, 105%, 0);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.transaction-out-sheet.is-open {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* =========================================================
+   KHUNG TRANG
+========================================================= */
+
+html,
+body {
+    min-height: 100%;
+    background: #f2f6f8;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.transaction-page {
+    width: 100%;
+    max-width: var(--transaction-page-width);
+    min-height: 100dvh;
+
+    margin: 0 auto;
+    padding-bottom: calc(44px + env(safe-area-inset-bottom));
+
+    overflow-x: hidden;
+
+    color: var(--transaction-navy);
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0,
+            #ffffff 12%,
+            #f9fbff 36%,
+            #faf9ff 100%
+        );
+
+    box-shadow:
+        0 0 36px rgba(26, 58, 83, 0.08);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.transaction-header {
+    position: relative;
+    top: auto;
+
+    width: 100%;
+    min-height: 71px;
+
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr) 48px;
+    align-items: end;
+
+    padding:
+        max(
+            33px,
+            calc(env(safe-area-inset-top) + 18px)
+        )
+        25px
+        25px;
+
+    background:#f7f7f7;
+
+    box-shadow:
+        0 8px 21px rgba(31, 69, 98, 0.055);
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+.transaction-home-button {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.transaction-home-icon-box {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+.copy-account-button {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.copy-account-icon-box {
+    width: 26px;
+    height: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.copy-account-icon-img {
+        width: 170px;
+    height: 170px;
+    margin-left: 22px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.copy-account-button:active {
+    transform: scale(0.94);
+    opacity: .75;
+}
+.transaction-home-icon-img {
+       width: 210px;
+    height: 220px;
+    margin-top: -5px;
+    margin-left: 12px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.transaction-home-button:active {
+    transform: scale(0.94);
+    opacity: .75;
+}
+.transaction-header h1 {
+        align-self: center;
+    margin: 0;
+    color: var(--transaction-title-blue);
+    font-size: 21px;
+    font-weight: 550;
+    margin-left: -5px;
+    line-height: 1.1;
+    letter-spacing: -0.45px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.transaction-back-button,
+.transaction-home-button {
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    align-self: center;
+}
+
+.transaction-back-button {
+    justify-self: start;
+
+    color: #2f6199;
+}
+
+.transaction-home-button {
+    justify-self: end;
+
+    color: #142e3d;
+}
+
+.transaction-back-button i {
+    font-size: 38px;
+    font-weight: 400;
+}
+
+.transaction-home-button i {
+    font-size: 35px;
+}
+
+
+/* =========================================================
+   PHẦN THÔNG TIN TÀI KHOẢN
+========================================================= */
+
+.account-detail-section {
+    position: relative;
+
+    padding:
+        28px
+        var(--transaction-side-space)
+        26px;
+
+    background:
+        radial-gradient(
+            circle at 6% 82%,
+            rgba(219, 252, 248, 0.63),
+            transparent 33%
+        ),
+        radial-gradient(
+            circle at 96% 72%,
+            rgba(239, 228, 252, 0.42),
+            transparent 32%
+        ),
+        #fafcff;
+}
+
+
+/* =========================================================
+   THẺ TÊN VÀ SỐ TÀI KHOẢN
+========================================================= */
+
+.account-identity-card {
+        width: 100%;
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 17px 12px 18px;
+    border: 1px solid var(--transaction-border);
+    border-radius: 8px;
+    background: linear-gradient(108deg, #fafaff 0%, #faf9ff 100%);
+    box-shadow: 0 4px 12px rgba(48, 82, 110, 0.025);
+}
+
+.account-identity-content {
+    min-width: 0;
+}
+
+.account-owner-name {
+    margin: 0 0 8px;
+
+    color: #0968ba;
+
+        font-size: 16px;
+    font-weight: 450;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+.account-qr-button {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.account-qr-icon-box {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.account-qr-icon-img {
+     width: 230px;
+    height: 350px;
+    margin-left: -41px;
+    margin-top: 54px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.account-qr-button:active {
+    transform: scale(0.94);
+    opacity: .75;
+}
+.account-detail-number {
+    margin: 0;
+
+    color: #18303f;
+
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.25px;
+
+    white-space: nowrap;
+}
+
+.copy-account-button {
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 52px;
+
+    color: #0669bc;
+}
+
+.copy-account-button i {
+    font-size: 35px;
+}
+
+
+/* =========================================================
+   SỐ DƯ
+========================================================= */
+
+.account-balance-section {
+        min-height: 116px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0 29px;
+
+}
+
+.account-balance-info > p {
+    margin: 0 0 12px;
+
+    color: #243a48;
+
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.account-balance-value {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.account-balance-value strong {
+   color: #18303f;
+    font-size: 38px;
+    font-weight: 450;
+    line-height: 0.95;
+    letter-spacing: -2px;
+}
+
+.account-balance-value span {
+        color: #18303f;
+    font-size: 23px;
+    margin-top: 0px;
+    font-weight: 550;
+    line-height: 1;
+}
+
+/* .account-qr-button {
+    width: 65px;
+    height: 65px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 65px;
+
+    margin-top: 10px;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+    background:#1d6093;
+
+    box-shadow:
+        0 10px 22px rgba(13, 93, 153, 0.2);
+} */
+
+.account-qr-button i {
+    font-size: 35px;
+}
+
+
+/* =========================================================
+   TÀI KHOẢN MẶC ĐỊNH
+========================================================= */
+
+.default-account-card {
+    width: 100%;
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: -8px;
+    padding: 19px 15px 19px 18px;
+
+    border: 1px solid var(--transaction-border);
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 5px 14px rgba(42, 77, 107, 0.035);
+}
+
+.default-account-card > span {
+    color: #172f3e;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+.default-account-button {
+   min-width: 94px;
+    height: 34px;
+    padding: 0 17px;
+    border-radius: 24px;
+    color: #8b9ba4;
+    background: #d8f1ff;
+    font-size: 15px;
+    font-weight: 650;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MENU NGANG
+========================================================= */
+/* =========================================================
+   ACCOUNT ACTIONS – 3 Ô ĐẦY ĐỦ, Ô 4 LỘ MỘT PHẦN
+========================================================= */
+
+.account-action-slider {
+    width: calc(100% + 24px);
+
+    margin-top: 25px;
+    margin-right: -24px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.account-action-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.account-action-track {
+    display: flex !important;
+    align-items: stretch;
+    gap: 17px;
+
+    width: max-content !important;
+
+    padding:
+        0
+        24px
+        0
+        0;
+
+    grid-template-columns: none !important;
+}
+
+.account-action-card {
+     width: 100px !important;
+    min-width: 112px !important;
+    max-width: 94px;
+    height: 124px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 18px 13px 15px;
+    overflow: hidden;
+    border: 1px solid #cfdaeb;
+    border-radius: 8px;
+    color: #1c3545;
+    background: #ffffff;
+    text-align: left;
+    box-shadow: 0 6px 16px rgba(43, 77, 105, 0.055);
+    scroll-snap-align: start;
+    flex: 0 0 112px !important;
+}
+
+.account-action-card > span:last-child {
+    font-size: 16px;
+    font-weight: 430;
+    line-height: 1.35;
+
+    color: #213746;
+}
+
+.account-action-icon {
+    width: 37px;
+    height: 37px;
+
+    display: grid;
+    place-items: center;
+
+    color: #0768ba;
+}
+
+.account-action-icon i {
+    font-size: 29px;
+}
+
+.apple-wallet-icon {
+    width: 37px;
+    height: 37px;
+
+    border-radius: 8px;
+
+    color: #ffffff;
+    background: #050505;
+}
+
+.apple-wallet-icon i {
+    font-size: 25px;
+}
+
+.account-action-card > span:last-child {
+    color: #213746;
+
+    font-size: 20px;
+    font-weight: 430;
+    line-height: 1.34;
+}
+
+
+/* =========================================================
+   KHU VỰC TRUY VẤN
+========================================================= */
+
+.transaction-query-section {
+    position: relative;
+
+    padding:
+        12px
+        var(--transaction-side-space)
+        31px;
+
+    background: #fbfaff;
+}
+
+.transaction-query-section::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    height: 1px;
+
+    background: rgba(220, 226, 237, 0.48);
+}
+@media (max-width: 374px) {
+    .account-action-card {
+        width: 104px;
+        min-width: 104px;
+    }
+
+    .account-action-track {
+        gap: 10px;
+    }
+}
+.transaction-query-section h2 {
+       margin: 0 0 23px;
+    color: #172f3e;
+    font-size: 21px;
+    font-weight: 550;
+    line-height: 1.2;
+    
+}
+
+.date-query-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+/* ========================================
+   ICON LỊCH
+======================================== */
+
+.calendar-from-icon-img,
+.calendar-to-icon-img{
+       position: absolute;
+    top: 60%;
+    right: -59px;
+    width: 171px;
+    height: 200px;
+    transform: translateY(-50%);
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Chỉnh riêng icon Từ ngày */
+.calendar-from-icon-img{
+
+}
+
+/* Chỉnh riêng icon Đến ngày */
+.calendar-to-icon-img{
+
+}
+.date-query-card {
+    position: relative;
+
+     height: 74px; 
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding:
+        15px
+        49px
+        15px
+        16px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--transaction-border);
+    border-radius: 8px;
+
+    text-align: left;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 5px 13px rgba(39, 73, 103, 0.035);
+}
+
+.date-query-label {
+    margin-bottom: 8px;
+
+    color: #0869bb;
+
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 1;
+}
+
+.date-query-card strong {
+    color: #1b3343;
+
+    font-size: 18px;
+    font-weight: 420;
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+.date-query-card i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+
+    color: #0869bb;
+
+    font-size: 32px;
+
+    transform: translateY(-50%);
+}
+
+.date-query-card input {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+}
+
+.transaction-query-button {
+ width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 17px;
+    border-radius: 7px;
+    color: #ffffff;
+    background: #314064;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.transaction-query-note {
+    margin: 9px 0 0;
+
+    color: #1f3365;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.48;
+}
+.header-back-icon-img {
+    width: 111px;
+    height: 243px;
+    margin-top: -99px;
+    margin-left: -42px;
+    display: block;
+    object-fit: contain;
+
+}
+
+/* =========================================================
+   DANH SÁCH GIAO DỊCH
+========================================================= */
+
+.transaction-history {
+        padding: 1px var(--transaction-side-space) 40px;
+    background: #faf9ff;
+    margin-top: -19px;
+
+}
+
+.transaction-day-card {
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   RESPONSIVE IPHONE SE
+========================================================= */
+
+@media (max-width: 374px) {
+    :root {
+        --transaction-side-space: 15px;
+    }
+
+    .transaction-header {
+        grid-template-columns: 40px minmax(0, 1fr) 40px;
+
+        min-height: 112px;
+
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-bottom: 21px;
+    }
+
+    .transaction-header h1 {
+        font-size: 24px;
+    }
+
+    .account-detail-section {
+        padding-top: 24px;
+    }
+
+    .account-detail-number {
+        font-size: 25px;
+    }
+
+    .account-balance-value strong {
+        font-size: 46px;
+    }
+
+    .account-balance-value span {
+        font-size: 22px;
+    }
+
+    .default-account-card > span {
+        font-size: 18px;
+        white-space: normal;
+    }
+
+    .default-account-button {
+        min-width: 94px;
+    }
+
+    .account-action-card {
+        width: 130px;
+        min-width: 130px;
+    }
+
+    .date-query-grid {
+        gap: 10px;
+    }
+
+    .date-query-card {
+        padding-right: 40px;
+        padding-left: 12px;
+    }
+
+    .date-query-card i {
+        right: 10px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP PREVIEW
+========================================================= */
+
+@media (min-width: 600px) {
+    .transaction-page {
+        width: var(--transaction-page-width);
+        max-width: var(--transaction-page-width);
+    }
+}
+/* =========================================================
+   KHÓA TRANG KHI MỞ BOTTOM SHEET
+========================================================= */
+
+body.transaction-detail-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   OVERLAY NỀN TỐI
+========================================================= */
+
+.transaction-detail-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+
+    background: rgba(0, 0, 0, 0.78);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 300ms ease,
+        visibility 300ms ease;
+
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}
+
+.transaction-detail-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   BOTTOM SHEET
+========================================================= */
+
+.transaction-detail-bottom-sheet {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 210;
+
+    width: 100%;
+    max-width: 430px;
+    height: min(72dvh, 670px);
+
+    margin: 0 auto;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    border: 1px solid rgba(181, 203, 226, 0.68);
+    border-bottom: 0;
+    border-radius: 32px 32px 0 0;
+
+    color: #172f3e;
+    background: #fbfaff;
+
+    box-shadow:
+        0 -18px 48px rgba(0, 0, 0, 0.24);
+
+    transform: translate3d(0, 105%, 0);
+
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        transform 440ms
+            cubic-bezier(0.22, 0.82, 0.22, 1),
+        visibility 440ms ease;
+
+    will-change: transform;
+
+    scrollbar-width: none;
+}
+
+.transaction-detail-bottom-sheet::-webkit-scrollbar {
+    display: none;
+}
+
+.transaction-detail-bottom-sheet.is-open {
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translate3d(0, 0, 0);
+}
+
+
+/* =========================================================
+   THANH KÉO
+========================================================= */
+
+.transaction-detail-drag-area {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 14px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fbfaff 0%,
+            #fbfaff 78%,
+            rgba(251, 250, 255, 0) 100%
+        );
+
+    touch-action: none;
+}
+
+.transaction-detail-handle {
+    width: 46px;
+    height: 4px;
+
+    border-radius: 999px;
+
+    background: #315d94;
+}
+
+
+/* =========================================================
+   NỘI DUNG SHEET
+========================================================= */
+
+.transaction-detail-sheet-content {
+    padding:
+        0
+        24px
+        calc(42px + env(safe-area-inset-bottom));
+}
+
+.transaction-detail-sheet-title {
+    margin: 0 0 30px;
+
+    color: #0867b7;
+
+    font-size: 27px;
+    font-weight: 650;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+/* =========================================================
+   SỐ TIỀN
+========================================================= */
+
+.transaction-detail-amount-row {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 24px;
+}
+
+.transaction-detail-income-icon {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 38px;
+
+    color: #173846;
+}
+
+.transaction-detail-income-icon i {
+    font-size: 33px;
+}
+
+.transaction-detail-amount-row strong {
+    color: #17303f;
+
+    font-size: clamp(30px, 8.4vw, 39px);
+    font-weight: 420;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TIÊU ĐỀ CHUYỂN KHOẢN
+========================================================= */
+
+.transaction-detail-transfer-title {
+    margin: 0 0 20px;
+
+    color: #18313f;
+
+    font-size: 21px;
+    font-weight: 650;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   THÔNG TIN
+========================================================= */
+
+.transaction-detail-information {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.transaction-detail-row {
+    display: grid;
+    grid-template-columns:
+        minmax(112px, 0.9fr)
+        minmax(0, 1.35fr);
+    gap: 19px;
+
+    align-items: start;
+}
+
+.transaction-detail-row > span {
+    color: #747781;
+
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.42;
+}
+
+.transaction-detail-row > strong {
+    min-width: 0;
+
+    color: #2b2d33;
+
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.42;
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+.transaction-detail-content-row > strong {
+    font-weight: 650;
+    line-height: 1.47;
+}
+
+
+/* =========================================================
+   MOBILE NHỎ
+========================================================= */
+
+@media (max-width: 374px) {
+    .transaction-detail-bottom-sheet {
+        height: min(76dvh, 670px);
+
+        border-radius: 27px 27px 0 0;
+    }
+
+    .transaction-detail-sheet-content {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .transaction-detail-sheet-title {
+        font-size: 24px;
+    }
+
+    .transaction-detail-amount-row strong {
+        font-size: 29px;
+    }
+
+    .transaction-detail-row {
+        grid-template-columns:
+            minmax(96px, 0.84fr)
+            minmax(0, 1.36fr);
+        gap: 13px;
+    }
+
+    .transaction-detail-row > span,
+    .transaction-detail-row > strong {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP PREVIEW
+========================================================= */
+
+@media (min-width: 600px) {
+    .transaction-detail-overlay {
+        left: 50%;
+
+        width: 430px;
+
+        transform: translateX(-50%);
+    }
+}
+/* =========================================================
+   TIỀN RA - OVERLAY
+========================================================= */
+
+.transaction-out-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+
+    background: rgba(0, 0, 0, 0.78);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 300ms ease,
+        visibility 300ms ease;
+}
+
+.transaction-out-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   TIỀN RA - BOTTOM SHEET
+========================================================= */
+
+.transaction-out-sheet {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 310;
+
+    width: 100%;
+    max-width: 430px;
+    height: min(88dvh, 820px);
+
+    margin: 0 auto;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    border: 1px solid rgba(182, 202, 225, 0.68);
+    border-bottom: 0;
+    border-radius: 31px 31px 0 0;
+
+    color: #172f3e;
+    background: #fbfaff;
+
+    box-shadow:
+        0 -18px 48px rgba(0, 0, 0, 0.25);
+
+    transform: translate3d(0, 105%, 0);
+
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        transform 440ms
+            cubic-bezier(0.22, 0.82, 0.22, 1),
+        visibility 440ms ease;
+
+    will-change: transform;
+
+    scrollbar-width: none;
+}
+
+.transaction-out-sheet::-webkit-scrollbar {
+    display: none;
+}
+
+.transaction-out-sheet.is-open {
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translate3d(0, 0, 0);
+}
+
+
+/* =========================================================
+   THANH KÉO
+========================================================= */
+
+.transaction-out-drag-area {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 14px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fbfaff 0%,
+            #fbfaff 80%,
+            rgba(251, 250, 255, 0) 100%
+        );
+
+    touch-action: none;
+}
+
+.transaction-out-handle {
+    width: 46px;
+    height: 4px;
+
+    border-radius: 999px;
+
+    background: #315d94;
+}
+
+
+/* =========================================================
+   NỘI DUNG
+========================================================= */
+
+.transaction-out-content {
+    padding:
+        0
+        24px
+        calc(40px + env(safe-area-inset-bottom));
+}
+
+
+
+
+/* =========================================================
+   SỐ TIỀN
+========================================================= */
+
+.transaction-out-amount {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 25px;
+}
+
+.transaction-out-icon {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 38px;
+
+    color: #173846;
+}
+
+.transaction-out-icon i {
+    font-size: 33px;
+}
+
+.transaction-out-amount strong {
+    color: #17303f;
+
+    font-size: clamp(30px, 8.3vw, 39px);
+    font-weight: 420;
+    line-height: 1.1;
+    letter-spacing: -0.7px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CÁC NHÓM THÔNG TIN
+========================================================= */
+
+.transaction-out-section {
+    margin-bottom: 25px;
+}
+
+.transaction-out-section h3 {
+    margin: 0 0 20px;
+
+    color: #18313f;
+
+    font-size: 21px;
+    font-weight: 650;
+    line-height: 1.3;
+}
+
+.transaction-out-row {
+    display: grid;
+    grid-template-columns:
+        minmax(112px, 0.9fr)
+        minmax(0, 1.35fr);
+    gap: 19px;
+
+    align-items: start;
+
+    margin-bottom: 19px;
+}
+
+.transaction-out-row:last-child {
+    margin-bottom: 0;
+}
+
+.transaction-out-row > span {
+    color: #747781;
+
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.42;
+}
+
+.transaction-out-row > strong {
+    min-width: 0;
+
+    color: #2b2d33;
+
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.42;
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+.transaction-out-content-row > strong {
+    font-weight: 650;
+    line-height: 1.47;
+}
+
+.transaction-out-footer {
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   TRA SOÁT
+========================================================= */
+
+.transaction-trace-button {
+    min-height: 48px;
+
+    margin-top: 6px;
+
+    color: #0870bd;
+    background: transparent;
+
+    font-size: 19px;
+    font-weight: 650;
+    text-align: left;
+}
+
+
+/* =========================================================
+   MOBILE NHỎ
+========================================================= */
+
+@media (max-width: 374px) {
+    .transaction-out-sheet {
+        height: min(91dvh, 820px);
+
+        border-radius: 27px 27px 0 0;
+    }
+
+    .transaction-out-content {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .transaction-out-title {
+        font-size: 24px;
+    }
+
+    .transaction-out-amount strong {
+        font-size: 29px;
+    }
+
+    .transaction-out-row {
+        grid-template-columns:
+            minmax(96px, 0.84fr)
+            minmax(0, 1.36fr);
+        gap: 13px;
+    }
+
+    .transaction-out-row > span,
+    .transaction-out-row > strong {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP PREVIEW
+========================================================= */
+
+@media (min-width: 600px) {
+    .transaction-out-overlay {
+        left: 50%;
+
+        width: 430px;
+
+        transform: translateX(-50%);
+    }
+}

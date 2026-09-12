@@ -1,0 +1,284 @@
+/* =========================================================
+   BOTTOM SHEET DÙNG CHUNG CHO 20 BILL
+========================================================= */
+
+body.transaction-sheet-open {
+    overflow: hidden;
+}
+
+.transaction-item[role="button"] {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.transaction-item[role="button"]:active {
+    background: rgba(226, 239, 250, 0.5);
+}
+
+.transaction-sheet-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+
+    background: rgba(0, 0, 0, 0.76);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 300ms ease,
+        visibility 300ms ease;
+}
+
+.transaction-sheet-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.transaction-sheet {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 310;
+
+    width: 100%;
+    max-width: 430px;
+    max-height: 88dvh;
+
+    margin: 0 auto;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    border: 1px solid rgba(181, 203, 226, 0.7);
+    border-bottom: 0;
+    border-radius: 32px 32px 0 0;
+
+    color: #172f3e;
+    background: #fbfaff;
+
+    box-shadow:
+        0 -18px 48px rgba(0, 0, 0, 0.24);
+
+    transform: translate3d(0, 105%, 0);
+
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        transform 440ms
+            cubic-bezier(0.22, 0.82, 0.22, 1),
+        visibility 440ms ease;
+
+    will-change: transform;
+
+    scrollbar-width: none;
+}
+
+.transaction-sheet::-webkit-scrollbar {
+    display: none;
+}
+
+.transaction-sheet.is-open {
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+}
+
+.transaction-sheet-drag-area {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    height: 48px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding-top: 14px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fbfaff 0%,
+            #fbfaff 80%,
+            rgba(251, 250, 255, 0) 100%
+        );
+
+    touch-action: none;
+}
+
+.transaction-sheet-handle {
+    width: 44px;
+    height: 4px;
+
+    border-radius: 999px;
+
+    background: #315d94;
+}
+
+.transaction-sheet-content {
+    padding:
+        0
+        24px
+        calc(40px + env(safe-area-inset-bottom));
+}
+
+.transaction-sheet-title {
+ margin: 0 0 31px;
+    color: #1a5d95;
+    font-size: 19px;
+    position: relative;
+    font-weight: 550;
+    margin-top: -6px;
+    line-height: 1.2;
+    text-align: center;
+
+}
+
+.transaction-sheet-amount {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 6px;
+}
+
+.transaction-sheet-icon {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 38px;
+
+    color: #173846;
+}
+
+.transaction-sheet-icon i {
+    font-size: 33px;
+}
+
+.transaction-sheet-amount strong {
+        font-size: 20px;
+    font-weight: 510;
+    margin-top: -16px;
+        margin-left: -8px;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+#sheetContent{
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    word-break: break-word;
+}
+.transaction-sheet-section {
+    margin-bottom: 25px;
+}
+
+.transaction-sheet-section h3 {
+ margin: 0 0 20px;
+    color: #23282b;
+    font-size: 18px;
+    font-weight: 510;
+}
+
+.transaction-sheet-row {
+    display: grid;
+    grid-template-columns:
+        minmax(112px, 0.9fr)
+        minmax(0, 1.35fr);
+
+    gap: 19px;
+    align-items: start;
+
+    margin-bottom: 19px;
+}
+
+.transaction-sheet-row:last-child {
+    margin-bottom: 0;
+}
+
+.transaction-sheet-row > span {
+        /* color: #1d1e21; */
+    font-size: 15px;
+    line-height: 1.42;
+}
+
+.transaction-sheet-row > strong {
+  min-width: 0;
+    /* color: #2b2d33; */
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.42;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.transaction-sheet-content-row > strong {
+    font-weight: 650;
+}
+
+.transaction-sheet-footer {
+    margin-top: 4px;
+}
+
+.transaction-trace-button {
+        min-height: 41px;
+    margin-top: 6px;
+    color: #0870bd;
+    background: transparent;
+    font-size: 15px;
+    /* font-weight: 650; */
+    text-align: left;
+}
+
+.transaction-trace-button[hidden] {
+    display: none;
+}
+
+@media (max-width: 374px) {
+    .transaction-sheet {
+        border-radius: 27px 27px 0 0;
+    }
+
+    .transaction-sheet-content {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .transaction-sheet-title {
+        font-size: 24px;
+    }
+
+    .transaction-sheet-amount strong {
+        font-size: 29px;
+    }
+
+    .transaction-sheet-row {
+        grid-template-columns:
+            minmax(96px, 0.84fr)
+            minmax(0, 1.36fr);
+
+        gap: 13px;
+    }
+
+    .transaction-sheet-row > span,
+    .transaction-sheet-row > strong {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 600px) {
+    .transaction-sheet-overlay {
+        left: 50%;
+        width: 430px;
+        transform: translateX(-50%);
+    }
+}

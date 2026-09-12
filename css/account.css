@@ -1,0 +1,1400 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #ffffff;
+
+    --page-background: #ffffff;
+
+    --text-main: #182f3e;
+    --text-secondary: #345d91;
+
+    --blue: #0765bd;
+    --blue-dark: #145da6;
+    --blue-light: #dfeffd;
+    --blue-soft: #eef7ff;
+
+    --card-border: #d4deef;
+    --green: #4cc77c;
+
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+
+    background: var(--page-background);
+
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+
+    overflow-x: hidden;
+
+    color: var(--text-main);
+    background: var(--page-background);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Segoe UI",
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    overscroll-behavior-y: none;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    outline: 0;
+
+    color: inherit;
+    background: transparent;
+
+    font: inherit;
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.account-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    overflow-x: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #ffffff 72%,
+            #fbfdff 100%
+        );
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.account-header{
+
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+   min-height: calc(100px + var(--safe-top));
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    padding-top: calc(var(--safe-top) + 25px);
+    padding-right: 25px;
+    padding-bottom: 34px;
+    padding-left: 25px;
+
+    background: rgba(255,255,255,.96);
+
+    box-shadow: 0 8px 22px rgba(31,69,98,.05);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.header-back-button,
+.account-header-button {
+    display: grid;
+    place-items: center;
+
+    color: #152e3d;
+
+    transition:
+        transform 150ms ease,
+        opacity 150ms ease;
+}
+
+.header-back-button {
+    width: 42px;
+    height: 42px;
+
+    color: #235f9e;
+}
+
+.header-back-button i {
+    font-size: 38px;
+}
+
+.header-back-button:active,
+.account-header-button:active {
+    opacity: 0.65;
+    transform: scale(0.9);
+}
+
+.account-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+}
+
+.account-header-button {
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+}
+
+.account-header-button i {
+    font-size: 31px;
+}
+.header-actions{
+
+    display:flex;
+    align-items:center;
+
+}
+.language-button{
+
+    width:44px;
+    height:44px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-right:12px;
+
+    flex:0 0 44px;
+
+    background:transparent;
+    border:none;
+}
+
+.language-icon-img{
+
+    width:24px;
+    height:24px;
+
+    object-fit:contain;
+
+    pointer-events:none;
+}
+.notification-button{
+
+    width:44px;
+    height:44px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-right:12px;
+
+    flex:0 0 44px;
+
+    background:transparent;
+    border:none;
+}
+
+.notification-icon-img{
+
+    width:24px;
+    height:24px;
+
+    object-fit:contain;
+
+    pointer-events:none;
+}
+.support-button{
+
+    width:44px;
+    height:44px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex:0 0 44px;
+
+    background:transparent;
+    border:none;
+}
+
+.support-icon-img{
+
+    width:24px;
+    height:24px;
+
+    object-fit:contain;
+
+    pointer-events:none;
+}
+.language-icon-img{
+    width:36px;
+    height:36px;
+}
+.ai-button small {
+    position: absolute;
+    top: 5px;
+    right: 3px;
+
+    font-size: 8px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.account-content {
+    padding:
+        25px
+        22px
+        calc(45px + var(--safe-bottom));
+}
+
+.account-title {
+    margin: 0 0 18px;
+    font-size: 28px;
+    font-weight: 400;
+    margin-top: -10px;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   CURRENCY TABS
+========================================================= */
+/* =========================
+   KHUNG ICON ẨN SỐ DƯ
+========================= */
+
+.balance-toggle-icon-box{
+
+    width:22px;
+    height:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+}
+
+
+/* =========================
+   ICON ẨN SỐ DƯ
+========================= */
+
+.balance-toggle-icon-img{
+    width: 140px;
+    height: 140px;
+    margin-top: -9px;
+    margin-left: 7px;
+    display: block;
+    object-fit: contain;
+}
+
+
+/* =========================
+   KHUNG ICON ĐẾM TÀI KHOẢN
+========================= */
+
+.account-count-icon-box{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+}
+
+
+/* =========================
+   ICON ĐẾM TÀI KHOẢN
+========================= */
+
+.account-count-icon-img{
+    width: 123px;
+   
+    height: 209px;
+    margin-top: -86px;
+    object-fit: contain;
+}
+.currency-tabs {
+        display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    margin-bottom: 25px;
+    border-radius: 9px;
+    background: #dfefff;
+}
+
+.currency-tab {
+    border-radius: 7px;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    color: #365c91;
+
+    transition:
+        color 180ms ease,
+        background-color 180ms ease,
+        box-shadow 180ms ease,
+        transform 150ms ease;
+}
+
+.currency-tab:active {
+    transform: scale(0.98);
+}
+
+.currency-tab.is-active {
+    color: #0964b7;
+    background: #ffffff;
+
+    box-shadow:
+        0 6px 16px rgba(57, 103, 143, 0.08);
+}
+
+
+/* =========================================================
+   CURRENCY PANELS
+========================================================= */
+
+.currency-panel {
+    display: none;
+}
+
+.currency-panel.is-active {
+    display: block;
+
+    animation: panelShow 250ms ease both;
+}
+
+
+/* =========================================================
+   ACCOUNT SUMMARY CARD
+========================================================= */
+
+
+
+.summary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 21px 18px 0;
+}
+
+.summary-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.summary-title-row h2 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 550;
+    line-height: 1.2;
+    color: #182f3e;
+}
+
+/* .account-count-button {
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 7px;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.95);
+
+    box-shadow:
+        0 6px 16px rgba(33, 75, 111, 0.13);
+} */
+
+.account-count-button span {
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    font-size: 17px;
+    font-weight: 650;
+
+    color: #ffffff;
+    background: #ffffff;
+}
+
+.balance-toggle-button:active {
+    opacity: 0.65;
+    transform: scale(0.9);
+}
+
+.balance-toggle-button i {
+    font-size: 27px;
+}
+
+/* .account-count-button {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border: 8px solid rgba(255, 255, 255, 0.92);
+    border-radius: 50%;
+
+    color: #ffffff;
+    background: #0d70c4;
+
+    box-shadow:
+        0 6px 15px rgba(20, 81, 132, 0.13);
+} */
+
+.account-count-button span {
+    font-size: 17px;
+    font-weight: 650;
+}
+
+.total-account-balance {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    padding: 9px 18px 10px;
+}
+
+.total-account-balance strong {
+    /* font-size: 29px;
+    font-weight: 420;
+    line-height: 1;
+
+    letter-spacing: -0.7px;
+
+    color: #18303f; */
+    font-size: 29px;
+    font-weight: 550;
+    line-height: 1;
+    color: #182f3e;
+}
+
+.total-account-balance span {
+  font-size: 20px;
+    font-weight: 550;
+    color: #18303f;
+}
+
+/* ===========================
+   Khung icon
+=========================== */
+
+.header-back-icon-box,
+.header-ai-icon-box,
+.header-bell-icon-box,
+.header-home-icon-box{
+
+    width:24px;
+    height:24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+
+    overflow:visible;
+}
+
+
+/* ===========================
+   Icon Back
+=========================== */
+
+.header-back-icon-img{
+    width: 111px;
+    height: 243px;
+    margin-top: 10px;
+    margin-left: -30px;
+    display: block;
+    object-fit: contain;
+}
+
+
+/* ===========================
+   Icon AI
+=========================== */
+
+.header-ai-icon-img{
+
+    width:18px;
+    height:18px;
+
+    display:block;
+    object-fit:contain;
+}
+
+
+/* ===========================
+   Icon Chuông
+=========================== */
+
+.header-bell-icon-img{
+
+    width:20px;
+    height:20px;
+
+    display:block;
+    object-fit:contain;
+}
+
+
+/* ===========================
+   Icon Home
+=========================== */
+
+.header-home-icon-img{
+width: 360px;
+    height: 420px;
+    margin-left: -80px;
+    margin-top: 26px;
+    display: block;
+    object-fit: contain;
+}
+/* =========================================================
+   ACCOUNT CARD SLIDER
+========================================================= */
+
+.account-cards-viewport {
+    position: relative;
+    z-index: 3;
+
+    width: calc(100% + 23px);
+
+    margin-right: -23px;
+
+    overflow-x: auto;
+    overflow-y: visible;
+
+    scrollbar-width: none;
+
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 17px;
+
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.account-cards-viewport::-webkit-scrollbar {
+    display: none;
+}
+.header-action-button,
+.support-button{
+
+    width:44px;
+    height:44px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:0;
+
+    border:none;
+    outline:none;
+
+    background:transparent;
+
+    flex-shrink:0;
+
+    cursor:pointer;
+}
+.language-icon-img{
+
+    width:24px;
+    height:24px;
+
+    object-fit:contain;
+
+    display:block;
+}
+.notification-icon-img{
+
+    width:23px;
+    height:23px;
+
+    object-fit:contain;
+
+    display:block;
+}
+.support-icon-img{
+
+    width:26px;
+    height:26px;
+
+    object-fit:contain;
+
+    display:block;
+}
+.account-cards-track {
+     display: flex;
+    align-items: stretch;
+    gap: 10px;
+    height: 149px;
+    margin-top: 17px;
+    width: max-content;
+    padding: 0 17px 26px 17px;
+        
+}
+
+.bank-account-card {
+   position: relative;
+     width:220px;
+
+ width: 215px;
+    min-width: 213px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 23px 18px 20px;
+    overflow: visible;
+    border: 1px solid #d3ddec;
+    border-radius: 10px;
+    background: #ffffff;
+    scroll-snap-align: start;
+    box-shadow: 0 5px 14px rgba(53, 86, 114, 0.035);
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.bank-account-card.is-default {
+    border: 1.5px solid #4dc879;
+}
+
+.bank-account-card:active {
+    transform: scale(0.985);
+}
+
+.default-label {
+    position: absolute;
+    top: -10px;
+    left: -1px;
+    z-index: 2;
+
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 7px;
+
+    border-radius: 2px 2px 0 0;
+
+    font-size: 11px;
+    font-weight: 750;
+    line-height: 1;
+
+    color: #ffffff;
+    background: #4ca66a;
+}
+.account-number {
+    margin: 0;
+
+    overflow: hidden;
+
+    font-size: 18px;
+    font-weight: 430;
+    line-height: 1.25;
+
+    color: #192f3e;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.account-card-balance {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+
+    white-space: nowrap;
+}
+
+.account-card-balance strong {
+    font-size: 22px;
+    font-weight: 750;
+    line-height: 1;
+
+    color: #172e3d;
+}
+
+.account-card-balance span {
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #172e3d;
+}
+
+/* =========================================================
+   ACCOUNT TOOLS
+========================================================= */
+
+/* .account-tools {
+    position: relative;
+    z-index: 1;
+    overflow:hidden;
+    min-height: 141px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+
+    padding:
+        22px
+        8px
+        20px;
+
+    border-radius: 0 0 21px 21px;
+ border-bottom-left-radius:22px;
+    border-bottom-right-radius:22px;
+    background: #e1f1ff;
+} */
+/* =========================================================
+   KHUNG TỔNG TÀI KHOẢN
+========================================================= */
+
+.account-summary-card {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+
+     overflow: visible;
+
+    border: 1px solid #d2dced;
+    border-radius: 22px;
+
+    /* Nền xanh nằm phía sau */
+    background: #e1f1ff;
+
+    box-shadow:
+        0 8px 22px rgba(50, 83, 112, 0.05);
+}
+/* ===========================
+   Khung chung icon
+=========================== */
+
+.account-tool-icon{
+
+    width:56px;
+    height:56px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    border:1px solid #d6deeb;
+
+    box-shadow:0 5px 14px rgba(38,76,108,.055);
+
+    overflow:visible;
+
+    flex-shrink:0;
+}
+
+
+/* ===========================
+   QR của tôi
+=========================== */
+
+.tool-qr-icon-box{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.tool-qr-icon-img{
+    width: 110px;
+    height: 130px;
+    margin-top: -31px;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* ===========================
+   TK số đẹp
+=========================== */
+
+.tool-beauty-icon-box{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.tool-beauty-icon-img{
+    width: 110px;
+    height: 130px;
+    margin-top: -36px;
+    margin-left: -1px;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* ===========================
+   TK chạm
+=========================== */
+
+.tool-pay-icon-box{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.tool-pay-icon-img{
+width: 285px;
+    height: 260px;
+    margin-left: 6px;
+    margin-top: -106px;
+    object-fit: contain;
+    display: block;
+}
+
+/* =========================================================
+   NỀN TRẮNG PHÍA TRÊN – BO TRÒN DƯỚI CHÂN
+========================================================= */
+
+.account-summary-card::before {
+        content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 258px;
+    background: #f9f9ff;
+    border-radius: 21px 21px 30px 30px;
+    border-bottom: 1px solid rgba(196, 207, 226, 0.9);
+    box-shadow: 0 7px 10px rgba(74, 98, 125, 0.07);
+    pointer-events: none;
+}
+
+
+/* Nội dung phần trên phải nằm trên nền trắng */
+
+.summary-header,
+.total-account-balance,
+.account-cards-viewport {
+    position: relative;
+    z-index: 2;
+}
+/* ===================================
+   Khung chứa ảnh
+=================================== */
+
+.business-image-box{
+
+    width:120px;
+    height:100px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-shrink:0;
+
+    overflow:visible;
+}
+
+
+/* ===================================
+   Ảnh
+=================================== */
+
+.business-image-img{
+
+         width: 974px;
+    height: 797px;
+    margin-top: 110px;
+    margin-left: 265px;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+}
+
+/* =========================================================
+   KHU TIỆN ÍCH MÀU XANH PHÍA DƯỚI
+========================================================= */
+
+.account-tools {
+   position: relative;
+    z-index: 0;
+    min-height: 88px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    padding: 10px 8px 13px;
+    background: #e1f1ff;
+    border-radius: 0 0 21px 21px;
+}
+.account-tool-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 13px;
+
+    min-width: 0;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+
+    color: #172e3d;
+
+    transition:
+        transform 150ms ease,
+        opacity 150ms ease;
+}
+
+.account-tool-item:active {
+    opacity: 0.7;
+    transform: scale(0.94);
+}
+
+.account-tool-icon {
+    width: 56px;
+    height: 56px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #d6deeb;
+    border-radius: 50%;
+
+    color: #0869bc;
+    background: #ffffff;
+
+    box-shadow:
+        0 5px 14px rgba(38, 76, 108, 0.055);
+}
+
+.account-tool-icon i {
+    font-size: 32px;
+}
+
+.apple-pay-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+
+    color: #000000;
+}
+
+.apple-pay-icon i {
+    font-size: 17px;
+}
+
+.apple-pay-icon strong {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BUSINESS ACCOUNT CARD
+========================================================= */
+
+/* .business-account-card {
+    position: relative;
+
+    min-height: 128px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 24px;
+    padding: 19px 17px;
+
+    overflow: hidden;
+
+    border: 1px solid #d5dced;
+    border-radius: 21px;
+
+    background:
+        radial-gradient(
+            circle at 85% 55%,
+            rgba(217, 220, 255, 0.82),
+            transparent 31%
+        ),
+        linear-gradient(
+            100deg,
+            #f4f5ff 0%,
+            #f5f5fe 62%,
+            #f1f1ff 100%
+        );
+} */
+
+.business-card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.business-card-content h2 {
+    margin: 0 0 3px;
+
+    font-size: 18px;
+    font-weight: 650;
+}
+
+.business-card-content p {
+    margin: 0 0 13px;
+
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.business-register-button {
+    min-width: 91px;
+    height: 38px;
+
+    padding: 0 18px;
+
+    border: 1.5px solid #0868bb;
+    border-radius: 21px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #0864b2;
+
+    transition:
+        color 150ms ease,
+        background-color 150ms ease,
+        transform 150ms ease;
+}
+
+.business-register-button:active {
+    color: #ffffff;
+    background: #0868bb;
+
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   BUSINESS ILLUSTRATION
+========================================================= */
+
+.business-illustration {
+    position: relative;
+
+    width: 116px;
+    height: 98px;
+
+    flex: 0 0 116px;
+}
+
+.shop-roof {
+    position: absolute;
+    top: 25px;
+    left: 23px;
+
+    width: 68px;
+    height: 20px;
+
+    border-radius: 8px 8px 3px 3px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #8f9af0 0 9px,
+            #c8d4ff 9px 18px
+        );
+
+    transform: perspective(80px) rotateX(12deg);
+}
+
+.shop-body {
+    position: absolute;
+    top: 42px;
+    left: 31px;
+
+    width: 52px;
+    height: 39px;
+
+    border-radius: 4px 4px 9px 9px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #7788e6,
+            #4459bf
+        );
+
+    box-shadow:
+        0 10px 0 rgba(65, 85, 183, 0.14);
+}
+
+.shop-body span {
+    position: absolute;
+    bottom: 0;
+    left: 18px;
+
+    width: 17px;
+    height: 23px;
+
+    background: #253fae;
+}
+
+.shop-body::after {
+    content: "";
+
+    position: absolute;
+    right: 8px;
+    top: 10px;
+
+    width: 12px;
+    height: 12px;
+
+    background: #d8e5ff;
+}
+
+.spark {
+    position: absolute;
+
+    font-style: normal;
+    color: #304fc1;
+}
+
+.spark-one {
+    top: 10px;
+    right: 19px;
+
+    font-size: 17px;
+}
+
+.spark-two {
+    top: 17px;
+    left: 18px;
+
+    font-size: 11px;
+}
+
+.spark-three {
+    top: 9px;
+    left: 48px;
+
+    font-size: 19px;
+    color: #91c6ef;
+}
+
+
+/* =========================================================
+   EMPTY FOREIGN CURRENCY
+========================================================= */
+
+.empty-currency-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 50px 25px;
+
+    border: 1px solid #d7e1ef;
+    border-radius: 21px;
+
+    text-align: center;
+
+    background: #f8fbff;
+}
+
+.empty-currency-icon {
+    width: 70px;
+    height: 70px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 17px;
+
+    border-radius: 50%;
+
+    color: #1170bd;
+    background: #e2f2ff;
+}
+
+.empty-currency-icon i {
+    font-size: 37px;
+}
+
+.empty-currency-card h2 {
+    margin: 0 0 8px;
+
+    font-size: 21px;
+}
+
+.empty-currency-card p {
+    max-width: 290px;
+
+    margin: 0 0 20px;
+
+    color: #60788a;
+
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.empty-currency-card button {
+    min-width: 140px;
+    height: 44px;
+
+    padding: 0 20px;
+
+    border-radius: 23px;
+
+    color: #ffffff;
+    background: #0868bb;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes panelShow {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 374px) {
+    .account-content {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .bank-account-card {
+        width: 72vw;
+        min-width: 72vw;
+        height: 128px;
+
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .account-number {
+        font-size: 16px;
+    }
+
+    .account-card-balance strong {
+        font-size: 20px;
+    }
+
+    .account-card-balance span {
+        font-size: 14px;
+    }
+
+    .account-tool-item {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 600px) {
+    body {
+        background: #edf2f6;
+    }
+
+    .account-page {
+        width: 430px;
+        margin: 0 auto;
+
+        box-shadow:
+            0 0 40px rgba(28, 61, 87, 0.13);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

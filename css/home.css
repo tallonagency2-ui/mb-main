@@ -1,0 +1,2472 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body {
+    margin: 0;
+
+    -webkit-overflow-scrolling: touch;
+}
+:root {
+    --page-background: #edf7f7;
+    --navy-950: #14273b;
+    --navy-900: #1c3249;
+    --navy-850: #223b55;
+    --navy-800: #29445f;
+    --text-main: #172d3d;
+    --text-muted: #8093a3;
+    --sky: #95dcfa;
+    --sky-light: #c9efff;
+    --white: #ffffff;
+    --pink: #e53e70;
+
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+
+    background: var(--page-background);
+
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+
+    overflow-x: hidden;
+
+    color: var(--text-main);
+    background: var(--page-background);
+
+      font-family:
+        "SF Pro Display",
+        "SF Pro Text",
+        -apple-system,
+        BlinkMacSystemFont,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    overscroll-behavior-y: none;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    outline: 0;
+
+    color: inherit;
+    background: transparent;
+
+    font: inherit;
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* img {
+    display: block;
+    max-width: 100%;
+} */
+
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* =========================================================
+   HOME PAGE
+========================================================= */
+
+.home-page {
+ position: relative;
+
+    width: 100%;
+    min-height: 100dvh;
+
+    padding-bottom:
+        calc(130px + var(--safe-bottom));
+
+    overflow-x: hidden;
+    overflow-y: visible;
+
+ 
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.home-hero {
+    position: relative;
+
+    height: clamp(430px, 48vh, 520px);
+
+    overflow: hidden;
+
+    color: var(--white);
+    background: #21384e;
+}
+/* =========================================================
+   KHỐI NỘI DUNG TRẮNG
+========================================================= */
+
+.home-content {
+       position: relative;
+    z-index: 8;
+    width: 100%;
+    margin-top: -158px;
+    padding-top: 0;
+    border-radius: 32px 32px 0 0;
+    background: linear-gradient(180deg, #f7f8f8 0%, #f8f9f9 48%, #f1f5f5 100%);
+    box-shadow: none;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   4 DỊCH VỤ CHÍNH
+========================================================= */
+
+.primary-services{
+    width:100%;
+    box-sizing:border-box;
+
+    padding:46px 20px 46px;
+
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+}
+
+
+/* =========================================================
+   TỪNG DỊCH VỤ
+========================================================= */
+
+.primary-service {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 17px;
+
+    color: #172d3d;
+    background: transparent;
+
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.22;
+    text-align: center;
+
+    -webkit-tap-highlight-color: transparent;
+
+    transition:
+        transform 150ms ease,
+        opacity 150ms ease;
+}
+
+.primary-service:active {
+    transform: scale(0.95);
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   KHUNG ICON
+========================================================= */
+
+.primary-service-icon {
+    position: relative;
+
+    width: 68px;
+    height: 68px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 68px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #fbfdff 100%
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(32, 67, 93, 0.11);
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   ẢNH TRONG ICON
+========================================================= */
+
+.primary-service-icon img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+    object-fit: contain;
+
+    transform-origin: center;
+
+    pointer-events: none;
+}
+
+.saving-badge-img{
+      position: absolute;
+    top: -12px;
+    right: 0px;
+    margin-left: -63px;
+    margin-top: -143px;
+    width: 124px;
+    height: auto;
+    z-index: 5;
+}
+.loan-badge-img{
+      position: absolute;
+    top: -12px;
+    right: -10px;
+    width: 130px;
+    margin-left: -64px;
+    margin-top: -148px;
+    height: auto;
+    z-index: 5;
+}
+.saving-icon-img{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:44px;
+    height:auto;
+
+    transform:translate(-50%,-50%);
+
+    object-fit:contain;
+}
+.loan-icon-img{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:46px;
+    height:auto;
+
+    transform:translate(-50%,-50%);
+
+    object-fit:contain;
+}
+.primary-service-icon{
+
+    position:relative;
+
+    width:82px;
+    height:82px;
+
+    border-radius:22px;
+
+    background:#fff;
+
+    overflow:visible;
+}
+/* =========================================================
+   NHÃN TÀI LỘC / NHƯ GIÓ
+========================================================= */
+
+.service-label {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    z-index: 3;
+
+    min-width: max-content;
+
+    padding:
+        2px
+        6px;
+
+    border: 1px solid currentColor;
+    border-radius: 3px;
+
+    font-size: 9px;
+    font-weight: 750;
+    line-height: 1.05;
+    white-space: nowrap;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+}
+
+.service-label-red {
+    color: #d83462;
+    background: #fff5f8;
+}
+
+.service-label-blue {
+    color: #1687c5;
+    background: #f0fbff;
+}
+
+
+/* =========================================================
+   NÚT THU GỌN
+========================================================= */
+
+/* =========================================================
+   NÚT THU GỌN
+========================================================= */
+
+/* .content-collapse-button {
+    position: absolute;
+    left: 50%;
+    top: 191px;
+    z-index: 20;
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+
+    color: #ffffff;
+    background: #e83d70;
+
+    box-shadow:
+        0 5px 12px rgba(196, 40, 88, 0.24);
+
+    transform: translateX(-50%);
+} */
+
+.content-collapse-button i {
+    font-size: 29px;
+    line-height: 1;
+}
+
+.content-collapse-button:active {
+    transform:
+        translateX(-50%)
+        scale(0.92);
+
+    filter: brightness(0.95);
+}
+/* =========================================================
+   NÚT THU GỌN
+========================================================= */
+
+/* .content-collapse-button{
+    position:absolute;
+    left:50%;
+    bottom:-24px;
+
+    transform:translateX(-50%);
+
+    width:48px;
+    height:48px;
+
+    padding:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    border-radius:50%;
+
+    background:#e83d70;
+
+    cursor:pointer;
+
+    z-index:20;
+} */
+
+
+/* KHUNG CHỨA ICON */
+/* .collapse-button-icon-box{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:visible;
+
+} */
+.primary-service-icon,
+.shopping-icon{
+       width: 65px;
+    margin-top: 10px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+/* ICON IMG */
+/* Chỉ chỉnh class này để thay đổi kích thước */
+
+.collapse-button-icon-img{
+width: 214px;
+    height: 231px;
+    margin-top: -137px;
+    margin-left: 110px;
+    position: absolute;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+
+}
+
+/* =========================================================
+   VÙNG DỊCH VỤ
+========================================================= */
+
+.primary-services {
+    position: relative;
+
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+   padding: 2px 20px 24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fafafa 0%,
+            #f8f9f9 70%,
+            #f1f5f5 100%
+        );
+}
+
+.transfer-icon-img{
+       width: 210px;
+    height: 240px;
+    margin-top: -117px;
+    margin-left: -104px;
+    object-fit:contain;
+    display:block;
+}
+
+.phone-icon-img{
+          width: 175px;
+    height: 190px;
+    margin-top: -95px;
+    margin-left: -76px;
+}
+
+.saving-icon-img{
+ width: 190px;
+    height: 236px;
+       margin-top: 7px;
+    margin-left: 4px;
+    object-fit:contain;
+    display:block;
+}
+
+.loan-icon-img{
+       width: 185px;
+    height: 205px;
+    margin-top: 5px;
+    margin-left: 4px;
+
+    object-fit:contain;
+    display:block;
+}
+
+.lottery-icon-img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+    display:block;
+}
+
+.flight-icon-img{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+    display:block;
+}
+
+.vietlott-icon-img{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+    display:block;
+}
+
+.data-icon-img{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+    display:block;
+}
+/* Không dùng mảng chuyển màu lớn */
+.primary-services::before {
+    content: none;
+}
+
+
+/* Đường bóng ngang mỏng giống ảnh mẫu */
+.primary-services::after {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+
+    height: 18px;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(67, 102, 126, 0.11) 0%,
+            rgba(67, 102, 126, 0.045) 38%,
+            rgba(67, 102, 126, 0) 76%
+        );
+
+    transform: translateY(50%);
+}
+/* =========================================================
+   ĐƯỜNG PHÂN CÁCH PHÍA DƯỚI MENU
+========================================================= */
+.primary-services {
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #ffffff 68%,
+            #f3f8fa 100%
+        );
+}
+
+
+
+/* =========================================================
+   IPHONE SE / MÀN HÌNH NHỎ
+========================================================= */
+
+@media (max-width: 374px) {
+    .home-content {
+        margin-top: -76px;
+    }
+
+    .primary-services {
+        min-height: 204px;
+
+        column-gap: 4px;
+
+        padding:
+            40px
+            8px
+            42px;
+    }
+
+    .primary-service {
+        gap: 14px;
+
+        font-size: 13px;
+    }
+
+    .primary-service-icon {
+        width: 60px;
+        height: 60px;
+
+        flex-basis: 60px;
+
+        border-radius: 18px;
+    }
+
+    .primary-service-icon img {
+        width: 37px;
+        height: 37px;
+    }
+
+    .content-collapse-button {
+        top: 181px;
+
+        width: 45px;
+        height: 45px;
+    }
+}
+.home-hero-background {
+    position: absolute;
+    inset: 0;
+margin-top: -98px;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(14, 112, 197, 0.16),
+            rgba(15, 37, 57, 0.05)
+        ),
+        url("../img/background1.png")
+        center 35% / cover no-repeat;
+
+    transform: scale(1.03);
+}
+
+.home-hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 22, 37, 0.05) 0%,
+            rgba(7, 22, 37, 0.04) 58%,
+            rgba(7, 22, 37, 0.2) 100%
+        );
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.home-header {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding:
+        max(29px, calc(var(--safe-top) + 15px))
+        18px
+        0;
+}
+
+.home-logo {
+    width: clamp(148px, 36vw, 190px);
+    height: auto;
+
+    object-fit: contain;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.header-action {
+    position: relative;
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+    flex: 0 0 48px;
+
+    border: 1px solid rgba(164, 208, 233, 0.08);
+    border-radius: 50%;
+
+    color: #eef9ff;
+    background: rgba(27, 56, 80, 0.7);
+
+    box-shadow:
+        0 7px 18px rgba(4, 20, 35, 0.14),
+        inset 0 1px 1px rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        transform 150ms ease,
+        background-color 150ms ease;
+}
+
+.header-action:active {
+    transform: scale(0.92);
+    background: rgba(45, 78, 103, 0.86);
+}
+
+.header-action i {
+    font-size: 29px;
+}
+
+.support-action img {
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+}
+
+.notification-dot,
+.menu-dot {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    border: 2px solid #263e54;
+    border-radius: 50%;
+
+    background: #e94173;
+}
+
+.notification-dot {
+    top: 2px;
+    right: 2px;
+}
+
+.menu-dot {
+    top: 5px;
+    right: 4px;
+
+    background: #8fd8f7;
+}
+
+.assistant-action {
+    background: #ffffff;
+    color: #263d52;
+}
+
+.assistant-action i {
+    font-size: 31px;
+}
+
+.assistant-star {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    font-size: 17px;
+
+    color: #2ec58c;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-column {
+    position: absolute;
+    z-index: 4;
+
+    top: 160px;
+    left: 28px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+/* .profile-avatar-button {
+    position: relative;
+
+    width: 86px;
+    height: 86px;
+
+    border: 2px solid rgba(204, 228, 241, 0.58);
+    border-radius: 50%;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.18);
+
+    overflow: visible;
+} */
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-security {
+    position: absolute;
+    z-index: 2;
+
+    top: -9px;
+    left: -6px;
+
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #edf8f5;
+    background: rgba(114, 137, 146, 0.92);
+
+    box-shadow:
+        0 3px 9px rgba(0, 0, 0, 0.18);
+}
+
+.profile-security i {
+    font-size: 23px;
+}
+
+.vip-plus-image {
+    width: 94px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   BALANCE SLIDER
+========================================================= */
+
+.balance-slider {
+    position: absolute;
+    z-index: 4;
+
+    top: 154px;
+    left: 131px;
+
+    width: calc(100% - 131px);
+
+    /* overflow: hidden; */
+}
+
+.balance-track {
+      display: flex;
+    gap: 13px;
+    margin-top: -15px;
+    /* position: fixed; */
+    /* padding-right: 28px; */
+    transition: transform 400ms cubic-bezier(0.22, 0.8, 0.24, 1);
+    will-change: transform;
+}
+/* =====================================================
+   CỘT PROFILE
+===================================================== */
+
+.profile-column{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+
+
+/* =====================================================
+   KHUNG AVATAR
+===================================================== */
+
+.profile-avatar-wrapper{
+
+    position:relative;
+
+    width:120px;
+    height:120px;
+
+}
+
+
+
+/* =====================================================
+   BUTTON AVATAR
+===================================================== */
+
+.profile-avatar-button{
+
+    position:absolute;
+    inset:0;
+
+    border:none;
+    background:transparent;
+    padding:0;
+
+    cursor:pointer;
+
+}
+
+
+
+/* =====================================================
+   ẢNH AVATAR
+===================================================== */
+
+/* .profile-avatar-img{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:94px;
+    height:94px;
+
+    object-fit:cover;
+    border-radius:50%;
+
+    transform:translate(-50%,-50%);
+
+} */
+
+
+
+/* =====================================================
+   KHUNG KHIÊN
+===================================================== */
+
+.profile-shield-box{
+
+    position:absolute;
+
+    top:8px;
+    left:6px;
+
+    width:34px;
+    height:34px;
+
+    z-index:5;
+
+}
+
+
+
+/* =====================================================
+   ẢNH KHIÊN
+===================================================== */
+
+.profile-shield-img{
+  width: 175px;
+    height: 290px;
+    margin-left: -72px;
+    margin-top: -120px;
+    object-fit: contain;
+    display: block;
+}
+
+
+
+/* =====================================================
+   KHUNG PLUS
+===================================================== */
+
+.vip-plus-box{
+    position: relative;
+    width: 160px;
+    height: 70px;
+    margin-top: -7px;
+    margin-left: 4px;
+    overflow: visible;
+}
+
+/* =====================================================
+   ẢNH PLUS
+===================================================== */
+
+.vip-plus-img{
+
+    position: absolute;
+    top: -69%;
+    left: 25%;
+    width: 184px;
+    height: auto;
+    object-fit: contain;
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center;
+
+}
+/* =====================================================
+   THẺ SỐ DƯ SÁNG – HIỆU ỨNG KÍNH
+===================================================== */
+
+/* =====================================================
+   BALANCE CARD – GIỐNG MẪU BÊN TRÁI
+===================================================== */
+
+.balance-card {
+    position: relative;
+
+    width: min(65vw, 310px);
+    min-width: min(65vw, 310px);
+    height: 137px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(155, 205, 234, 0.23);
+
+    border-radius: 23px;
+
+    color: #ffffff;
+
+    /*
+        Không dùng xanh sáng.
+        Dùng xanh đen trong suốt để ảnh nền xuyên qua.
+    */
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35, 68, 98, 0.48) 0%,
+            rgba(18, 48, 76, 0.53) 52%,
+            rgba(9, 31, 54, 0.59) 100%
+        );
+
+    box-shadow:
+        0 12px 28px rgba(2, 17, 32, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.09),
+        inset 0 0 0 1px rgba(105, 170, 207, 0.035);
+
+    backdrop-filter:
+        blur(7px)
+        saturate(112%);
+
+    -webkit-backdrop-filter:
+        blur(7px)
+        saturate(112%);
+        -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    text-rendering: optimizeLegibility;
+}
+.balance-card-link-area {
+    position: relative;
+    z-index: 2;
+
+    flex: 1;
+
+    min-height: 0;
+
+    padding:
+        16px
+        17px
+        10px;
+
+    cursor: pointer;
+}
+.balance-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    border-radius: inherit;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            115deg,
+            rgba(255, 255, 255, 0.075) 0%,
+            rgba(255, 255, 255, 0.018) 32%,
+            transparent 57%
+        );
+}
+.balance-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(3, 22, 39, 0.035) 38%,
+            rgba(2, 18, 34, 0.14) 72%,
+            rgba(2, 17, 31, 0.18) 100%
+        );
+}
+.balance-card-link-area,
+.daily-profit {
+    position: relative;
+    z-index: 2;
+}
+.balance-card-top {
+     /* position: relative; */
+    z-index: 1;
+    display: flex;
+    margin-top: 0px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.balance-title-button {
+    color: #ffffff;
+
+     font-size:16px;
+    font-weight:510;
+    letter-spacing:-0.15px;
+    line-height:1.1;
+}
+
+.balance-value {
+    color: #ffffff;
+}
+
+.balance-value span {
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.balance-value strong.amount{
+
+    font-size:31px;
+
+    font-weight:700;
+
+    letter-spacing:-1.05px;
+}
+.balance-value strong {
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    font-size:17px;
+
+    font-weight:640;
+
+    letter-spacing:-0.2px;
+
+    line-height:1;
+}
+
+.balance-visibility {
+    color: #9fe4ff;
+}
+
+.balance-title-button i {
+      font-size: 32px;
+    margin-top: -9px;
+    margin-left: 35px;
+    position: absolute;
+}
+
+.balance-visibility {
+    width: 40px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    color: #96dbfa;
+}
+
+.balance-visibility i{
+
+    font-size:23px;
+
+    font-weight:300;
+}
+
+.balance-value {
+   position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    margin-top: 7px;
+    font-size: 18px;
+    line-height: 1;
+        margin-top:12px;
+
+    display:flex;
+    align-items:flex-end;
+    gap:6px;
+
+    line-height:1;
+}
+
+.balance-value span {
+        font-size: 23px;
+    font-weight: 640;
+    margin-top: -5px;
+    letter-spacing: 1.1px;
+    line-height: 1;
+}
+
+/* .balance-value strong {
+    font-size: 20px;
+    font-weight: 650;
+} */
+.daily-profit span{
+
+    font-size:13px;
+
+    font-weight:610;
+
+    letter-spacing:0.65px;
+
+    line-height:1;
+}
+.daily-profit {
+    width: 100%;
+    height: 43px;
+
+    flex: 0 0 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding:
+        0
+        17px;
+
+    border: 0;
+    border-radius:
+        0
+        0
+        22px
+        22px;
+
+    color: #91d7f5;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+
+    /* background:
+        linear-gradient(
+            90deg,
+            rgba(34, 74, 105, 0.58),
+            rgba(29, 68, 99, 0.62)
+        ); */
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(141, 209, 241, 0.07);
+}
+.daily-profit i {
+    font-size: 27px;
+    margin-top: -9px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+
+.balance-card-link-area {
+    position: relative;
+    z-index: 2;
+
+    flex: 1;
+    min-height: 0;
+
+    padding: 15px 17px 9px;
+
+    cursor: pointer;
+}
+
+.balance-card-link-area:active {
+    opacity: 0.92;
+}
+
+.balance-card-link-area:focus-visible {
+    outline: 2px solid rgba(159, 224, 253, 0.9);
+    outline-offset: 3px;
+    border-radius: 14px;
+}
+/* =========================================================
+   PRIMARY SERVICES
+========================================================= */
+
+
+
+/* =========================================================
+   PROMOTION BANNER
+========================================================= */
+
+.promotion-section {
+    position: relative;
+
+    width: 100%;
+
+    padding: 28px 0 20px;
+    margin-top: -20px;
+ background: transparent;
+    overflow: hidden;
+}
+
+/* .promotion-section::before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:40px;
+   
+} */
+
+/* Vùng nhìn slider */
+.promotion-viewport {
+    width: 100%;
+
+    /* overflow: hidden; */
+
+    touch-action: pan-y;
+
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.promotion-viewport.is-dragging {
+    cursor: grabbing;
+}
+
+
+/* Dãy banner */
+.promotion-track {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    margin-left: -8px;
+    padding-right: calc((100% - min(69vw, 350px)) / 2);
+    padding-left: calc((100% - min(69vw, 350px)) / 2);
+    transition: transform 430ms cubic-bezier(0.22, 0.82, 0.25, 1);
+    will-change: transform;
+}
+
+
+/* Khung từng banner */
+.promotion-slide{
+    position:relative;
+
+    width:min(75vw,380px);
+    min-width:min(75vw,380px);
+
+    aspect-ratio:1.75/1;
+
+    padding:9px;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:#f4f7f9;      /* thay vì #ffffff */
+
+    border:1px solid #edf2f5;
+
+    box-shadow:
+        0 1px 2px rgba(18,42,61,.04),
+        inset 0 0 0 1px rgba(255,255,255,.45);
+
+    opacity:.72;
+
+    transform:scale(.90);
+
+    transition:
+        opacity .4s,
+        transform .4s;
+}
+
+.promotion-slide::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    border-radius:22px;
+
+    box-shadow:
+        inset 16px 0 22px rgba(204,214,221,.18),
+        inset -16px 0 22px rgba(204,214,221,.18);
+
+    pointer-events:none;
+}
+.bottom-navigation-image-mode {
+   position: fixed;
+    z-index: 50;
+    left: 50%;
+    bottom: max(-8px, calc(var(--safe-bottom) + 8px));
+    width: min(calc(100% - 36px), 394px);
+    height: 86px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    overflow: visible;
+    transform: translateX(-50%);
+}
+.bottom-navigation-total-img {
+   position: absolute;  
+    top: 65%;
+    left: 50%;
+    width: 655px;
+    height: 795px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+/* Banner đang ở giữa */
+.promotion-slide.is-active {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* Ảnh nằm vừa khít trong khung */
+.promotion-slide img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center;
+
+    transform-origin: center;
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+/* Banner bên trái */
+.promotion-slide .promotion-banner-left-img {
+     width: 504px;
+    height: 670px;
+    margin-left: -3px;
+    margin-top: 50px;
+    display: block;
+    border-radius: 22px;
+    transform:
+        translate(-50%, -50%)
+        translateX(0)
+        translateY(0)
+        scale(1);
+}
+
+
+/* Banner ở giữa */
+.promotion-slide .promotion-banner-center-img {
+        width: 504px;
+    height: 670px;
+    margin-left: -3px;
+    margin-top: 50px;
+    display: block;
+    border-radius: 22px;
+    transform:
+        translate(-50%, -50%)
+        translateX(0)
+        translateY(0)
+        scale(1);
+}
+
+
+/* Banner bên phải */
+.promotion-slide .promotion-banner-right-img {
+      width: 504px;
+    height: 670px;
+    margin-left: -3px;
+    margin-top: -3px;
+    display: block;
+    border-radius: 22px;
+    transform: translate(-50%, -50%) translateX(0) translateY(0) scale(1);
+}
+/* =========================================================
+   SHOPPING
+========================================================= */
+
+.shopping-section {
+    width: 100%;
+
+    padding:
+        7px
+        20px
+        calc(135px + var(--safe-bottom));
+
+    background: #f2f6f6;
+
+    height: auto;
+    min-height: 0;
+
+    overflow: visible;
+}
+
+.shopping-section h2 {
+    margin: 0 0 21px;
+    position: absolute;
+    color: #1d3343;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: -17px;
+    letter-spacing: 0.1px;
+}
+.icon-test{
+    width: 100px;
+    height: 100px;
+}
+.shopping-grid {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    column-gap: 8px;
+    row-gap: 30px;
+
+    height: auto;
+    min-height: 0;
+
+    overflow: visible;
+}
+.shopping-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    min-width: 0;
+
+    color: #213647;
+
+    font-size: 14px;
+    font-weight: 450;
+    line-height: 1.2;
+    text-align: center;
+
+    transition:
+        transform 150ms ease,
+        opacity 150ms ease;
+}
+
+.shopping-item:active {
+    transform: scale(0.94);
+    opacity: 0.75;
+}
+
+.shopping-icon {
+      /* width: 53px; */
+    /* height: 53px; */
+    display: grid;
+    /* place-items: center; */
+    /* border-radius: 16px; */
+    /* background: #ffffff; */
+
+}
+
+.shopping-icon img {
+        width: 750px;
+    height: 793px;
+    margin-top: -255px;
+    margin-left: 290px;
+    object-fit: contain;
+}
+
+.shopping-placeholder {
+    color: #1671bd;
+
+    font-size: 30px;
+}
+
+.shopping-placeholder i {
+    font-size: 31px;
+}
+
+
+/* =========================================================
+   BOTTOM NAVIGATION
+========================================================= */
+
+/* .bottom-navigation {
+    position: fixed;
+    z-index: 50;
+
+    right: 18px;
+    bottom: max(
+        15px,
+        calc(var(--safe-bottom) + 8px)
+    );
+    left: 217px;
+
+    height: 86px;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+
+    padding: 5px 7px;
+
+    border: 1px solid rgba(143, 189, 221, 0.08);
+    border-radius: 21px;
+
+    color: #a8b8c6;
+    background: rgba(28, 52, 77, 0.97);
+
+    box-shadow:
+        0 14px 35px rgba(13, 35, 55, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+} */
+
+.bottom-nav-item {
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    color: #aab8c6;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    transition:
+        color 160ms ease,
+        transform 160ms ease;
+}
+
+.bottom-nav-item > i {
+    font-size: 30px;
+}
+
+.bottom-nav-item:active {
+    transform: scale(0.93);
+}
+
+.bottom-nav-item.is-active {
+    color: #ffffff;
+}
+
+.qr-navigation {
+    transform: translateY(-8px);
+}
+
+.qr-navigation:active {
+    transform:
+        translateY(-8px)
+        scale(0.93);
+}
+
+.qr-navigation-icon {
+    width: 64px;
+    height: 64px;
+
+    display: grid;
+    place-items: center;
+
+    border: 3px solid rgba(212, 244, 255, 0.4);
+    border-radius: 20px;
+
+    color: #182e43;
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            #f2c9ff,
+            #b6e9ff 55%,
+            #d3f5ff
+        );
+
+    box-shadow:
+        0 8px 21px rgba(4, 22, 39, 0.24);
+}
+
+.qr-navigation-icon i {
+    font-size: 39px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 374px) {
+    .home-header {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .home-logo {
+        width: 127px;
+    }
+
+    .header-actions {
+        gap: 5px;
+    }
+
+    .header-action {
+        width: 42px;
+        height: 42px;
+        flex-basis: 42px;
+    }
+
+    .profile-column {
+        left: 17px;
+    }
+
+    .profile-avatar-button {
+        width: 75px;
+        height: 75px;
+    }
+
+    .balance-slider {
+        left: 108px;
+        width: calc(100% - 108px);
+    }
+
+    .balance-card {
+        width: 69vw;
+        min-width: 69vw;
+    }
+
+    .primary-services {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    .primary-service {
+        font-size: 12px;
+    }
+
+    .primary-service-icon {
+        width: 61px;
+        height: 61px;
+    }
+
+    .shopping-section {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .shopping-item {
+        font-size: 12px;
+    }
+
+    .bottom-navigation {
+        right: 9px;
+        left: 9px;
+    }
+
+    .bottom-nav-item {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 600px) {
+    .home-page {
+        width: 430px;
+        margin: 0 auto;
+
+        box-shadow:
+            0 0 45px rgba(12, 35, 54, 0.15);
+    }
+
+    .bottom-navigation {
+        right: auto;
+        left: 50%;
+
+        width: 394px;
+
+        transform: translateX(-50%);
+    }
+
+    .promotion-track {
+        padding-right: 66px;
+        padding-left: 66px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+/* =========================================================
+   HOME HEADER
+========================================================= */
+
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.home-logo-link {
+    display: block;
+
+    flex: 0 0 auto;
+
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.home-logo-box {
+    position: relative;
+
+    width: 150px;
+    height: 52px;
+
+    display: block;
+
+    overflow: visible;
+}
+
+/* Chỉ chỉnh class này */
+.home-logo-img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 150px;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    transform:
+        translateY(-50%)
+        scale(1);
+
+    transform-origin: left center;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.home-support-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+
+    width: 9px;
+    height: 9px;
+
+    border: 2px solid #1c3043;
+    border-radius: 50%;
+
+    background: #ed4d7a;
+}
+
+
+/* =========================================================
+   ASSISTANT BUTTON
+========================================================= */
+
+/* .home-assistant-button {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 48px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.92);
+} */
+
+
+
+/* Chỉ chỉnh class này */
+
+
+.home-assistant-star {
+    position: absolute;
+    top: 0;
+    right: -2px;
+
+    font-size: 14px;
+    line-height: 1;
+
+    color: #2fd17f;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   NOTIFICATION BUTTON
+========================================================= */
+
+.home-notification-button {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 48px;
+
+    border-radius: 50%;
+
+    background: rgba(29, 53, 75, 0.58);
+}
+
+
+
+/* Chỉ chỉnh class này */
+
+
+/* =========================================================
+   HOME HEADER
+========================================================= */
+
+.home-header {
+    position: relative;
+    z-index: 20;
+
+    width: 100%;
+
+    display: grid;
+    grid-template-columns:
+        minmax(90px, 1fr)
+        auto;
+
+    align-items: center;
+    gap: 8px;
+
+    padding:
+        calc(env(safe-area-inset-top) + 14px)
+        14px
+        10px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.home-logo-link {
+    min-width: 0;
+
+    display: block;
+
+    text-decoration: none;
+}
+
+.home-logo-box {
+   position: absolute;
+    width: 169px;
+    height: 224px;
+    margin-top: -192px;
+    display: block;
+
+    /* overflow: hidden; */
+}
+
+.home-logo-img {
+  width: 209px;
+    margin-top: -60px;
+    height: 335px;
+    display: block;
+    object-fit: contain;
+    object-position: left center;
+    transform: scale(1);
+    transform-origin: left center;
+    pointer-events: none;
+}
+.balance-card-link-area,
+.balance-title-button,
+.balance-visibility,
+.daily-profit {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+
+    outline: none;
+}
+
+.balance-card-link-area:focus,
+.balance-title-button:focus,
+.balance-visibility:focus,
+.daily-profit:focus {
+    outline: none;
+}
+
+.balance-card-link-area:active,
+.balance-title-button:active,
+.balance-visibility:active,
+.daily-profit:active {
+    background: transparent;
+}
+
+/* =========================================================
+   KHUNG CHỨA TOÀN BỘ ACTION
+========================================================= */
+
+.home-header-actions {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    flex: 0 0 auto;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   SUPPORT BUTTON
+========================================================= */
+
+.home-support-button {
+    position: relative;
+
+    width: 48px;
+    height: 48px;
+
+    display: block;
+
+    flex: 0 0 48px;
+
+    padding: 0;
+    border: 0;
+
+    background: transparent;
+
+    overflow: visible;
+}
+
+.home-support-slot {
+      position: absolute;
+    top: 96%;
+    left: 79%;
+    width: 82px;
+    height: 40px;
+    display: block;
+    transform: translate(-50%, -50%);
+    overflow: visible;
+}
+
+.home-support-img {
+         position: absolute;
+    top: 51%;
+    left: 54%;
+    width: 85px;
+    height: 169px;
+    object-fit: contain;
+    transform: translate(-50%, -50%) translateX(0) translateY(0) scale(1);
+    transform-origin: center;
+    pointer-events: none;
+}
+
+.home-support-dot {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #ef4d79;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ASSISTANT BUTTON
+========================================================= */
+
+.home-assistant-button {
+    position: relative;
+
+    width: 48px;
+    height: 48px;
+
+    display: block;
+
+    flex: 0 0 48px;
+
+    padding: 0;
+    border: 0;
+
+    background: transparent;
+
+    overflow: visible;
+}
+
+.home-assistant-slot {
+    position: relative;
+    top: 20%;
+    left: 81%;
+    width: 90px;
+    height: 42px;
+    display: block;
+    transform: translate(-50%, -50%);
+    overflow: visible;
+}
+
+.home-assistant-img {
+    position: absolute;
+    top: 118%;
+    left: 50%;
+
+    width: 142px;
+    height: 156px;
+    object-fit: contain;
+
+    transform:
+        translate(-50%, -50%)
+        translateX(0)
+        translateY(0)
+        scale(1);
+
+    transform-origin: center;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   NOTIFICATION BUTTON
+========================================================= */
+
+.home-notification-button {
+    position: relative;
+
+    width: 48px;
+    height: 48px;
+
+    display: block;
+
+    flex: 0 0 48px;
+
+    padding: 0;
+    border: 0;
+
+    background: transparent;
+
+    overflow: visible;
+}
+
+.home-notification-slot {
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90px;
+    height: 119px;
+    display: block;
+    transform: translate(-50%, -50%);
+    overflow: visible;
+}
+
+.home-notification-img {
+         position: relative;
+    top: 63%;
+    left: 50%;
+    width: 125px;
+    height: 178px;
+    object-fit: contain;
+    transform: translate(-50%, -50%) translateX(0) translateY(0) scale(1);
+    transform-origin: center;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MENU BUTTON
+========================================================= */
+
+.home-menu-button {
+    position: relative;
+
+    width: 48px;
+    height: 48px;
+
+    display: block;
+
+    flex: 0 0 48px;
+
+    padding: 0;
+    border: 0;
+
+    background: transparent;
+
+    overflow: visible;
+}
+
+.home-menu-slot {
+       position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 102px;
+    height: 110px;
+    display: block;
+
+    transform: translate(-50%, -50%);
+
+    overflow: visible;
+}
+
+.home-menu-img {
+ position: relative;
+    top: 57%;
+    left: 54%;
+    width: 160px;
+    height: 220px;
+    object-fit: contain;
+    transform: translate(-50%, -50%) translateX(0) translateY(0) scale(1);
+    transform-origin: center;
+    pointer-events: none;
+}
+
+.home-menu-dot {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #8edcff;
+
+    pointer-events: none;
+}
+
+
+
+/* =========================================================
+   MÀN HÌNH NHỎ
+========================================================= */
+
+@media (max-width: 374px) {
+    .home-header {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .home-logo-box {
+        width: 116px;
+        height: 43px;
+    }
+
+    .home-header-actions {
+        grid-template-columns: repeat(4, 42px);
+        gap: 4px;
+    }
+
+    .home-support-button,
+    .home-assistant-button,
+    .home-notification-button,
+    .home-menu-button {
+        width: 42px;
+        height: 42px;
+
+        flex-basis: 42px;
+    }
+
+    .home-support-icon-box,
+    .home-assistant-icon-box,
+    .home-notification-icon-box,
+    .home-menu-icon-box {
+        width: 29px;
+        height: 29px;
+    }
+}
+/* =========================================================
+   MENU BUTTON
+========================================================= */
+
+.home-menu-button {
+        width: 48px;
+    position: relative;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 48px;
+    border-radius: 50%;
+    background: rgba(29, 53, 75, 0.58);
+    top: 15px;
+}
+
+
+
+/* Chỉ chỉnh class này */
+.home-menu-icon-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 29px;
+    height: 29px;
+
+    object-fit: contain;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+
+    transform-origin: center;
+
+    pointer-events: none;
+}
+
+.home-menu-dot {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+
+    width: 9px;
+    height: 9px;
+
+    border: 2px solid #1c3043;
+    border-radius: 50%;
+
+    background: #83d8ff;
+}
+
+
+/* =========================================================
+   PRESS EFFECT
+========================================================= */
+
+
+.home-support-button:active,
+.home-assistant-button:active,
+.home-notification-button:active,
+.home-menu-button:active {
+    transform: scale(0.93);
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   MOBILE NHỎ
+========================================================= */
+
+@media (max-width: 374px) {
+    .home-header {
+        gap: 8px;
+
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .home-logo-box {
+        width: 128px;
+        height: 46px;
+    }
+
+    .home-logo-img {
+        width: 128px;
+    }
+
+    .home-header-actions {
+        gap: 6px;
+    }
+
+    .home-support-button,
+    .home-assistant-button,
+    .home-notification-button,
+    .home-menu-button {
+        width: 43px;
+        height: 43px;
+
+        flex-basis: 43px;
+    }
+}
