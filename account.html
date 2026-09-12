@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Android / PWA -->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- iPhone / iPad -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="default"
+    >
+
+    <meta name="apple-mobile-web-app-title" content="MB Priority">
+
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="./img/app-icon-full.png"
+>
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <title>Tài khoản</title>
+
+    <link rel="stylesheet" href="./css/account.css">
+</head>
+
+<body>
+
+    <main class="account-page">
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+    <header class="account-header">
+
+    <button
+        type="button"
+        class="header-back-button"
+        id="backButton"
+        aria-label="Quay lại"
+    >
+        <span class="header-back-icon-box">
+
+            <img
+                src="./img/icon-back.png"
+                alt=""
+                class="header-back-icon-img"
+            >
+
+        </span>
+    </button>
+
+
+    <nav
+        class="account-header-actions"
+        aria-label="Tiện ích"
+    >
+        <button
+            type="button"
+            class="account-header-button"
+            id="homeButton"
+            aria-label="Trang chủ"
+        >
+
+            <span class="header-home-icon-box">
+
+                <img
+                    src="./img/icon-total.png"
+                    alt=""
+                    class="header-home-icon-img"
+                >
+
+            </span>
+
+        </button>
+
+    </nav>
+
+</header>
+
+
+        <!-- =================================================
+             NỘI DUNG
+        ================================================== -->
+        <section class="account-content">
+
+            <h1 class="account-title">Tài khoản</h1>
+
+
+            <!-- Tab loại tiền -->
+            <div
+                class="currency-tabs"
+                role="tablist"
+                aria-label="Chọn loại tài khoản"
+            >
+                <button
+                    type="button"
+                    class="currency-tab is-active"
+                    id="vndTab"
+                    role="tab"
+                    aria-selected="true"
+                    data-currency="vnd"
+                >
+                    VND
+                </button>
+
+                <button
+                    type="button"
+                    class="currency-tab"
+                    id="foreignTab"
+                    role="tab"
+                    aria-selected="false"
+                    data-currency="foreign"
+                >
+                    Ngoại tệ
+                </button>
+            </div>
+
+
+            <!-- =================================================
+                 KHỐI TÀI KHOẢN VND
+            ================================================== -->
+            <section
+                class="currency-panel is-active"
+                id="vndPanel"
+                data-panel="vnd"
+            >
+
+                <article class="account-summary-card">
+
+                    <!-- Tổng số dư -->
+                  <div class="summary-header">
+
+    <div class="summary-title-row">
+
+        <h2>Số dư tài khoản</h2>
+
+        <button
+            type="button"
+            class="balance-toggle-button"
+            id="accountBalanceToggle"
+            aria-label="Ẩn số dư"
+        >
+
+            <span class="balance-toggle-icon-box">
+
+               <img
+    src="./img/icon-hide.png"
+    alt=""
+    class="balance-toggle-icon-img"
+    id="accountBalanceToggleIcon"
+>
+
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <button
+        type="button"
+        class="account-count-button"
+        aria-label="Có 3 tài khoản"
+    >
+
+        <span class="account-count-icon-box">
+
+            <img
+                src="./img/icon-account-count.png"
+                alt=""
+                class="account-count-icon-img"
+            >
+
+        </span>
+
+    </button>
+
+</div>
+
+                    <div
+                        class="total-account-balance"
+                        aria-live="polite"
+                    >
+                        <strong id="accountTotalBalance">
+                            12,180,100
+                        </strong>
+
+                        <span>VND</span>
+                    </div>
+
+
+                    <!-- Slider tài khoản -->
+                    <div
+                        class="account-cards-viewport"
+                        id="accountCardsViewport"
+                    >
+                        <div
+                            class="account-cards-track"
+                            id="accountCardsTrack"
+                        >
+
+                            <!-- Tài khoản mặc định -->
+                            <article
+                                class="bank-account-card is-default"
+                                tabindex="0"
+                                data-account="./transaction.html"
+                            >
+                                <span class="default-label">
+                                    MẶC ĐỊNH
+                                </span>
+
+                                <p class="account-number">
+                                    0326723588
+                                </p>
+
+                                <div class="account-card-balance">
+                                    <strong
+                                        class="account-balance-value"
+                                        data-balance="11,249,000"
+                                    >
+                                        11,249,000
+                                    </strong>
+
+                                    <span>VND</span>
+                                </div>
+                            </article>
+
+
+                            <!-- Tài khoản thứ hai -->
+                            <article
+                                class="bank-account-card"
+                                tabindex="0"
+                                data-account="./transaction.html"
+                            >
+                                <p class="account-number">  
+                                    0326761253
+                                </p>
+
+                                <div class="account-card-balance">
+                                    <strong
+                                        class="account-balance-value"
+                                        data-balance="931,100"
+                                    >
+                                        12334
+                                    </strong>
+
+                                    <span>VND</span>
+                                </div>
+                            </article>
+
+
+                            <!-- Tài khoản thứ ba -->
+                            <article
+                                class="bank-account-card"
+                                tabindex="0"
+                                data-account="./transaction.html"
+                            >
+                                <p class="account-number">
+                                    686899999
+                                </p>
+
+                                <div class="account-card-balance">
+                                    <strong
+                                        class="account-balance-value"
+                                        data-balance="0"
+                                    >
+                                        0
+                                    </strong>
+
+                                    <span>VND</span>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Tiện ích tài khoản -->
+                  <nav
+    class="account-tools"
+    aria-label="Tiện ích tài khoản"
+>
+
+    <!-- QR của tôi -->
+    <button
+        type="button"
+        class="account-tool-item"
+    >
+        <span class="account-tool-icon">
+            <span class="tool-qr-icon-box">
+                <img
+                    src="./img/icon-myqr.png"
+                    alt="QR của tôi"
+                    class="tool-qr-icon-img"
+                >
+            </span>
+        </span>
+
+        <span>QR của tôi</span>
+    </button>
+
+
+    <!-- TK số đẹp -->
+    <button
+        type="button"
+        class="account-tool-item"
+    >
+        <span class="account-tool-icon">
+            <span class="tool-beauty-icon-box">
+                <img
+                    src="./img/icon-beauty-account.png"
+                    alt="TK số đẹp"
+                    class="tool-beauty-icon-img"
+                >
+            </span>
+        </span>
+
+        <span>TK số đẹp</span>
+    </button>
+
+
+    <!-- TK chạm -->
+    <button
+        type="button"
+        class="account-tool-item"
+    >
+        <span class="account-tool-icon">
+            <span class="tool-pay-icon-box">
+                <img
+                    src="./img/icon-touch-pay.png"
+                    alt="TK chạm"
+                    class="tool-pay-icon-img"
+                >
+            </span>
+        </span>
+
+        <span>TK chạm</span>
+    </button>
+
+</nav>
+
+                </article>
+
+
+                <!-- Banner đăng ký hộ kinh doanh -->
+              <article class="business-account-card">
+
+    <!-- <div class="business-card-content">
+
+        <h2>Tài khoản hộ kinh doanh</h2>
+
+        <p>Tối ưu lợi nhuận kinh doanh</p>
+
+        <button
+            type="button"
+            class="business-register-button"
+        >
+            Đăng ký
+        </button>
+
+    </div> -->
+
+    <div
+        class="business-image-box"
+        aria-hidden="true"
+    >
+
+        <img
+            src="./img/business-banner.png"
+            alt=""
+            class="business-image-img"
+        >
+
+    </div>
+
+</article>
+
+            </section>
+
+
+            <!-- =================================================
+                 KHỐI NGOẠI TỆ
+            ================================================== -->
+            <section
+                class="currency-panel"
+                id="foreignPanel"
+                data-panel="foreign"
+            >
+                <article class="empty-currency-card">
+
+                    <span class="empty-currency-icon">
+                        <i class="bx bx-wallet"></i>
+                    </span>
+
+                    <h2>Chưa có tài khoản ngoại tệ</h2>
+
+                    <p>
+                        Mở tài khoản ngoại tệ để quản lý giao dịch
+                        quốc tế thuận tiện hơn.
+                    </p>
+
+                    <button type="button">
+                        Mở tài khoản
+                    </button>
+
+                </article>
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="./js/account.js"></script>
+</body>
+
+</html>

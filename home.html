@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#22384f">
+
+    <!-- Android / PWA -->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- iPhone / iPad -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    >
+
+    <meta name="apple-mobile-web-app-title" content="MB Priority">
+
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="./img/app-icon-full.png"
+>
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <title>Trang chủ</title>
+
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+
+<body>
+
+    <main class="home-page">
+
+        <!-- =================================================
+             PHẦN ĐẦU TRANG
+        ================================================== -->
+        <section class="home-hero">
+
+            <div
+                class="home-hero-background"
+                aria-hidden="true"
+            ></div>
+
+            <!-- Header -->
+      <header class="home-header">
+
+    <!-- Logo -->
+    <a
+        href="./home.html"
+        class="home-logo-link"
+        aria-label="MB Priority"
+    >
+        <span class="home-logo-box">
+            <img
+                src="./img/priority-logo.png"
+                alt="MB Priority"
+                class="home-logo-img"
+            >
+        </span>
+    </a>
+
+
+    <nav
+    class="home-header-actions"
+    aria-label="Tiện ích đầu trang"
+>
+
+    <!-- Hỗ trợ -->
+    <button
+        type="button"
+        class="home-support-button"
+        aria-label="Hỗ trợ"
+    >
+        <span class="home-support-slot">
+
+            <img
+                src="./img/support1.png"
+                alt=""
+                class="home-support-img"
+            >
+
+            <!-- <span
+                class="home-support-dot"
+                aria-hidden="true"
+            ></span> -->
+
+        </span>
+    </button>
+
+
+    <!-- Trợ lý -->
+    <button
+        type="button"
+        class="home-assistant-button"
+        aria-label="Trợ lý thông minh"
+    >
+        <span class="home-assistant-slot">
+
+            <img
+                src="./img/assistant.png"
+                alt=""
+                class="home-assistant-img"
+            >
+
+        </span>
+    </button>
+
+    
+
+    <!-- Thông báo -->
+    <button
+        type="button"
+        class="home-notification-button"
+        aria-label="Thông báo"
+    >
+        <span class="home-notification-slot">
+
+            <img
+                src="./img/bell1.png"
+                alt=""
+                class="home-notification-img"
+            >
+
+        </span>
+    </button>
+
+
+    <!-- Menu -->
+    <button
+        type="button"
+        class="home-menu-button"
+        aria-label="Mở menu"
+    >
+        <span class="home-menu-slot">
+
+            <img
+                src="./img/menu.png"
+                alt=""
+                class="home-menu-img"
+            >
+
+            <!-- <span
+                class="home-menu-dot"
+                aria-hidden="true"
+            ></span> -->
+
+        </span>
+    </button>
+
+</nav>
+
+</header>
+
+
+            <!-- Hồ sơ -->
+            <aside class="profile-column">
+
+    <!-- Khung avatar -->
+    <div class="profile-avatar-wrapper">
+
+        <!-- Icon khiên -->
+        <div class="profile-shield-box">
+
+            <img
+                src="./img/shield.png"
+                alt=""
+                class="profile-shield-img"
+            >
+
+        </div>
+
+        <!-- Avatar -->
+        <button
+            type="button"
+            class="profile-avatar-button"
+            aria-label="Mở hồ sơ"
+        >
+
+            <img
+                src="./img/avatar.png"
+                alt=""
+                class="profile-avatar-img"
+            >
+
+        </button>
+
+    </div>
+
+
+    <!-- Hạng Plus -->
+    <div class="vip-plus-box">
+
+        <img
+            src="./img/vip-plus.png"
+            alt="Hạng Plus"
+            class="vip-plus-img"
+        >
+
+    </div>
+
+</aside>
+
+
+            <!-- Slider số dư -->
+      <section
+    class="balance-slider"
+    id="balanceSlider"
+    aria-label="Thông tin tài khoản"
+>
+    <div
+        class="balance-track"
+        id="balanceTrack"
+    >
+
+        <article class="balance-card is-active">
+
+            <!-- Vùng bấm để mở account.html -->
+            <div
+                class="balance-card-link-area"
+                data-account-link="./account.html"
+                role="link"
+                tabindex="0"
+                aria-label="Xem chi tiết tổng số dư VND"
+            >
+
+                <div class="balance-card-top">
+
+                    <button
+                        type="button"
+                        class="balance-title-button"
+                    >
+                        <span>Tổng số dư VND</span>
+                        <i class="bx bx-chevron-right"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="balance-visibility"
+                        id="balanceVisibility"
+                        aria-label="Hiện số dư"
+                    >
+                        <i class="bx bx-show"></i>
+                    </button>
+
+                </div>
+
+                <div
+                    class="balance-value"
+                    id="balanceValue"
+                    aria-live="polite"
+                >
+                    <span id="hiddenBalance">*** ***</span>
+                    <strong>VND</strong>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="daily-profit"
+            >
+                <span style="
+    margin-top: -9px;
+    font-size: 13px ;" >SINH LỜI MỖI NGÀY</span>
+                <i class="bx bx-chevron-right"></i>
+            </button>
+
+        </article>
+
+
+        <article class="balance-card">
+
+            <!-- Vùng bấm để mở account.html -->
+            <div
+                class="balance-card-link-area"
+                data-account-link="./account.html"
+                role="link"
+                tabindex="0"
+                aria-label="Xem chi tiết tài khoản thanh toán"
+            >
+
+                <div class="balance-card-top">
+
+                    <button
+                        type="button"
+                        class="balance-title-button"
+                    >
+                        <span>Tài khoản thanh toán</span>
+                        <i class="bx bx-chevron-right"></i>
+                    </button>
+
+                </div>
+
+                <div class="balance-value">
+                    <span>*** ***</span>
+                    <strong>VND</strong>
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="daily-profit"
+            >
+                <span>XEM CHI TIẾT</span>
+                <i class="bx bx-chevron-right"></i>
+            </button>
+
+        </article>
+
+    </div>
+</section>
+
+        </section>
+
+
+        <!-- =================================================
+             NỘI DUNG TRẮNG
+        ================================================== -->
+        <section class="home-content">
+
+            <!-- Menu chính -->
+            <section
+                class="primary-services"
+                aria-label="Dịch vụ chính"
+            >
+
+                <button
+                    type="button"
+                    class="primary-service"
+                >
+                    <span class="primary-service-icon">
+                        <img
+            src="./img/icon-transfer.png"
+            alt=""
+            class="transfer-icon-img"
+        >
+                    </span>
+
+                    <span>Chuyển tiền</span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="primary-service"
+                >
+                    <span class="primary-service-icon">
+                          <img
+            src="./img/icon-phone.png"
+            alt=""
+            class="phone-icon-img"
+        >
+                    </span>
+
+                    <span>Nạp tiền<br>điện thoại</span>
+                </button>
+<button
+    type="button"
+    class="primary-service"
+>
+    <span class="primary-service-icon">
+
+        <!-- Badge -->
+        <img
+            src="./img/tag-saving.png"
+            alt=""
+            class="saving-badge-img"
+        >
+
+        <!-- Icon -->
+        <img
+            src="./img/icon-saving.png"
+            alt=""
+            class="saving-icon-img"
+        >
+
+    </span>
+
+    <span>Tiền gửi</span>
+</button>
+
+              <button
+    type="button"
+    class="primary-service"
+>
+    <span class="primary-service-icon">
+
+        <!-- Badge -->
+        <img
+            src="./img/tag-loan.png"
+            alt=""
+            class="loan-badge-img"
+        >
+
+        <!-- Icon -->
+        <img
+            src="./img/icon-loan.png"
+            alt=""
+            class="loan-icon-img"
+        >
+
+    </span>
+
+    <span>Vay nhanh</span>
+</button>
+            </section>
+
+
+            <!-- Nút thu gọn -->
+           <button
+    type="button"
+    class="content-collapse-button"
+    id="contentCollapseButton"
+    aria-label="Thu gọn menu"
+>
+    <span class="collapse-button-icon-box">
+
+        <img
+            src="./img/arrow-down.png"
+            alt=""
+            class="collapse-button-icon-img"
+        >
+
+    </span>
+</button>
+
+
+            <!-- Slider banner -->
+            <section
+    class="promotion-section"
+    aria-label="Ưu đãi nổi bật"
+>
+    <div
+        class="promotion-viewport"
+        id="promotionViewport"
+    >
+        <div
+            class="promotion-track"
+            id="promotionTrack"
+        >
+
+            <!-- Banner trái -->
+            <article class="promotion-slide">
+                <img
+                    src="./img/banner-deposit2.png"
+                    alt="Ưu đãi dành cho khách hàng"
+                    class="promotion-banner-left-img"
+                >
+            </article>
+
+
+            <!-- Banner giữa -->
+            <article class="promotion-slide is-active">
+                <img
+                    src="./img/banner-deposit.png"
+                    alt="Siêu lãi tiền gửi tăng riêng cho bạn"
+                    class="promotion-banner-center-img"
+                >
+            </article>
+
+
+            <!-- Banner phải -->
+            <article class="promotion-slide">
+                <img
+                    src="./img/banner-deposit1.png"
+                    alt="Ưu đãi mới"
+                    class="promotion-banner-right-img"
+                >
+            </article>
+
+        </div>
+    </div>
+</section>
+
+
+            <!-- Mua sắm -->
+            <section class="shopping-section">
+
+                <h2>Mua sắm - Giải trí - Đầu tư</h2>
+
+                <div class="shopping-grid">
+
+                    <button
+                        type="button"
+                        class="shopping-item"
+                    >
+                        <span class="shopping-icon">
+                            <img
+                                src="./img/icon-lottery.png" class="icon-test"
+                                alt=""
+                            >
+                        </span>
+<!-- 
+                        <span>Vua xổ số</span> -->
+                    </button>
+
+
+            
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- =================================================
+             ĐIỀU HƯỚNG DƯỚI
+        ================================================== -->
+        <nav
+    class="bottom-navigation bottom-navigation-image-mode"
+    aria-label="Điều hướng chính"
+>
+    <img
+        src="./img/bottom-navigation-total.png"
+        alt="Thanh điều hướng"
+        class="bottom-navigation-total-img"
+        draggable="false"
+    >
+</nav>
+
+    </main>
+
+    <script src="./js/home.js"></script>
+</body>
+
+</html>

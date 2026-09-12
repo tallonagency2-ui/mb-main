@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#17283b">
+
+    <!-- Android / PWA -->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- iPhone / iPad -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    >
+
+    <meta name="apple-mobile-web-app-title" content="MB Priority">
+<link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="./img/app-icon-full.png"
+>
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <title>Đăng nhập</title>
+
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <!-- Ảnh nền -->
+        <img
+            src="./img/mb_priority_background.png"
+            alt=""
+            class="login-background"
+            draggable="false"
+        >
+
+        <!-- Lớp phủ nền -->
+        <div
+            class="login-background-overlay"
+            aria-hidden="true"
+        ></div>
+
+
+        <!-- Header -->
+      <header class="login-header">
+
+    <a
+        href="./index.html"
+        class="priority-brand"
+        aria-label="MB Priority"
+    >
+        <img
+            src="./img/priority-logo.png"
+            alt="MB Priority"
+            class="priority-brand-image"
+        >
+    </a>
+
+    <nav
+        class="header-actions"
+        aria-label="Tiện ích"
+    >
+
+        <button
+            type="button"
+            class="language-button"
+            aria-label="Ngôn ngữ"
+        >
+            <img
+                src="./img/vietnam-flag.png"
+                alt="Tiếng Việt"
+                class="language-icon-img"
+            >
+        </button>
+
+        <button
+            type="button"
+            class="notification-button"
+            aria-label="Thông báo"
+        >
+            <img
+                src="./img/bell.png"
+                alt="Thông báo"
+                class="notification-icon-img"
+            >
+        </button>
+
+        <button
+            type="button"
+            class="support-button"
+            aria-label="Hỗ trợ"
+        >
+            <img
+                src="./img/support.png"
+                alt="Hỗ trợ"
+                class="support-icon-img"
+            >
+        </button>
+
+    </nav>
+
+</header>
+
+
+        <!-- Khung đăng nhập -->
+        <section
+            class="login-card"
+            aria-labelledby="loginGreeting"
+        >
+
+            <div class="login-card-content">
+
+                <!-- Biểu tượng bảo mật -->
+              <div class="security-icon">
+
+    <img
+        src="./img/security.png"
+        alt="Bảo mật"
+        class="security-icon-img"
+    >
+
+</div>
+
+
+                <!-- Thông tin khách hàng -->
+                <div class="customer-information">
+
+                    <p
+                        class="login-greeting"
+                        id="loginGreeting"
+                    >
+                        Xin chào,
+                    </p>
+
+                    <h1 class="customer-name">
+                        <span>PHAM</span>
+                        <span>QUOC HOI</span>
+                    </h1>
+
+                </div>
+
+
+                <!-- Face ID -->
+                <button
+                    type="button"
+                    class="face-id-button"
+                    aria-label="Đăng nhập bằng Face ID"
+                >
+                    <div class="scan-icon-box">
+
+    <img
+        src="./img/scan.png"
+        alt="Quét"
+        class="scan-icon-img"
+    >
+
+</div>
+                </button>
+
+
+                <!-- Mật khẩu -->
+          <!-- Mật khẩu -->
+<!-- Mật khẩu -->
+<div
+    class="password-area"
+    id="passwordArea"
+    aria-label="Mật khẩu gồm 9 ký tự"
+>
+    <span
+        class="password-placeholder"
+        id="passwordPlaceholder"
+    >
+        Mật khẩu
+    </span>
+
+    <div
+        class="password-dots"
+        id="passwordDots"
+        aria-hidden="true"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <button
+        type="button"
+        class="password-toggle"
+        id="passwordToggle"
+        aria-label="Hiện mật khẩu"
+    >
+        <i class="bx bx-show"></i>
+    </button>
+</div>
+
+                <!-- Liên kết tài khoản -->
+                <div class="login-options">
+
+                    <button
+                        type="button"
+                        class="login-option-button"
+                    >
+                        Tài khoản khác
+                    </button>
+
+                    <button
+                        type="button"
+                        class="login-option-button"
+                    >
+                        Quên mật khẩu?
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Nút đăng nhập -->
+            <button
+                type="button"
+                class="login-submit-button"
+                id="loginButton"
+            >
+                <span>Đăng nhập</span>
+
+                <span
+                    class="login-button-loader"
+                    aria-hidden="true"
+                ></span>
+            </button>
+
+        </section>
+
+
+        <!-- Tiện ích phía dưới -->
+       <nav
+    class="bottom-services"
+    aria-label="Dịch vụ nhanh"
+>
+
+    <!-- Quét QR -->
+    <button
+        type="button"
+        class="service-item service-qr"
+    >
+        <span class="service-icon-box qr-icon-box">
+            <img
+                src="./img/qr-service.png"
+                alt=""
+                class="qr-service-img"
+            >
+        </span>
+
+        <span class="service-label">
+            Quét QR
+        </span>
+    </button>
+
+
+    <!-- Xác thực D-OTP -->
+    <button
+        type="button"
+        class="service-item service-otp"
+    >
+        <span class="service-icon-box otp-icon-box">
+            <img
+                src="./img/otp-service.png"
+                alt=""
+                class="otp-service-img"
+            >
+        </span>
+
+        <span class="service-label">
+            Xác thực D-OTP
+        </span>
+    </button>
+
+
+    <!-- Thay ảnh nền -->
+    <button
+        type="button"
+        class="service-item service-background"
+    >
+        <span class="service-icon-box background-icon-box">
+
+            <img
+                src="./img/background-service.png"
+                alt=""
+                class="background-service-img"
+            >
+
+            <!-- <small class="service-new-badge">
+                NEW
+            </small> -->
+
+        </span>
+
+        <span class="service-label">
+            Thay ảnh nền
+        </span>
+    </button>
+
+</nav>
+
+
+        <!-- Kéo lên -->
+      <button
+    type="button"
+    class="expand-button"
+    aria-label="Mở rộng"
+>
+    <span class="expand-icon-box">
+        <img
+            src="./img/expand.png"
+            alt=""
+            class="expand-icon-img"
+        >
+    </span>
+</button>
+    </main>
+
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

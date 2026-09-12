@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#17283b">
+
+    <!-- Android / PWA -->
+    <link rel="manifest" href="./manifest.json">
+
+    <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="./img/app-icon-512.png"
+    >
+    
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+    
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="default"
+    >
+    
+    <meta
+        name="apple-mobile-web-app-title"
+        content="MB"
+    >
+    
+    <meta
+        name="theme-color"
+        content="#17283b"
+    >
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <title>MB Priority</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+    <main
+        class="splash-page"
+        id="splashPage"
+        aria-label="Màn hình khởi động MB Priority"
+    >
+        <img
+            src="./img/mb_priority_background.png"
+            alt=""
+            class="splash-background"
+            draggable="false"
+        >
+
+        <div
+            class="splash-overlay"
+            aria-hidden="true"
+        ></div>
+
+        <div
+            class="splash-loader"
+            aria-label="Đang tải ứng dụng"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </main>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="manifest" href="./manifest.json">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="default"
+    >
+    <meta
+        name="apple-mobile-web-app-title"
+        content="MB Priority"
+    >
+
+ <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="./img/app-icon-full.png"
+>
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+    >
+
+    <title>Chi tiết tài khoản</title>
+
+    <link rel="stylesheet" href="./css/transaction.css">
+    <link rel="stylesheet" href="./css/transaction-sheet.css">
+</head>
+
+<body>
+
+<main class="transaction-page">
+
+    <!-- HEADER -->
+    <header class="transaction-header">
+        <button
+            type="button"
+            class="transaction-back-button"
+            id="transactionBackButton"
+            aria-label="Quay lại"
+        >
+           <span class="header-back-icon-box">
+
+            <img
+                src="./img/icon-back.png"
+                alt=""
+                class="header-back-icon-img"
+            >
+
+        </span>
+        </button>
+
+        <h1>Chi tiết tài khoản</h1>
+
+       <button
+    type="button"
+    class="transaction-home-button"
+    id="transactionHomeButton"
+    aria-label="Trang chủ"
+>
+    <span class="transaction-home-icon-box">
+
+        <img
+            src="./img/icon-home.png"
+            alt=""
+            class="transaction-home-icon-img"
+            draggable="false"
+        >
+
+    </span>
+</button>
+    </header>
+
+
+    <!-- THÔNG TIN TÀI KHOẢN -->
+    <section class="account-detail-section">
+
+        <article class="account-identity-card">
+            <div class="account-identity-content">
+                <p class="account-owner-name">
+                    HOANG VAN HUAN
+                </p>
+
+                <p
+                    class="account-detail-number"
+                    id="accountDetailNumber"
+                >
+                    0326723588
+                </p>
+            </div>
+
+          <button
+    type="button"
+    class="copy-account-button"
+    id="copyAccountButton"
+    aria-label="Sao chép số tài khoản"
+>
+    <span class="copy-account-icon-box">
+
+        <img
+            src="./img/icon-copy.png"
+            alt=""
+            class="copy-account-icon-img"
+            draggable="false"
+        >
+
+    </span>
+</button>
+        </article>
+
+
+        <section class="account-balance-section">
+            <div class="account-balance-info">
+                <p>Số dư tài khoản</p>
+
+                <div class="account-balance-value">
+                    <strong>11,249,000</strong>
+                    <span>VND</span>
+                </div>
+            </div>
+
+          <button
+    type="button"
+    class="account-qr-button"
+    aria-label="Hiển thị mã QR tài khoản"
+>
+    <span class="account-qr-icon-box">
+
+        <img
+            src="./img/icon-account-qr1.png"
+            alt=""
+            class="account-qr-icon-img"
+            draggable="false"
+        >
+
+    </span>
+</button>
+        </section>
+
+
+        <article class="default-account-card">
+            <span>Chọn làm TK mặc định</span>
+
+            <button
+                type="button"
+                class="default-account-button is-selected"
+                id="defaultAccountButton"
+            >
+                Đã chọn
+            </button>
+        </article>
+
+
+        <section
+    class="account-action-slider"
+    aria-label="Các thao tác tài khoản"
+>
+    <div class="account-action-track">
+
+        <!-- Chuyển tiền -->
+        <button type="button" class="account-action-card">
+
+            <span class="account-action-icon">
+
+                <img
+                    src="./img/icon-transfer.png"
+                    alt=""
+                    class="account-transfer-icon-img"
+                    draggable="false"
+                >
+
+            </span>
+
+            <span>Chuyển<br>tiền</span>
+
+        </button>
+
+
+        <!-- Xuất sao kê -->
+        <button type="button" class="account-action-card">
+
+            <span class="account-action-icon">
+
+                <img
+                    src="./img/icon-statement.png"
+                    alt=""
+                    class="account-statement-icon-img"
+                    draggable="false"
+                >
+
+            </span>
+
+            <span>Xuất sao<br>kê</span>
+
+        </button>
+
+
+        <!-- Apple -->
+        <button type="button" class="account-action-card">
+
+            <span class="account-action-icon">
+
+                <img
+                    src="./img/icon-apple.png"
+                    alt=""
+                    class="account-apple-icon-img"
+                    draggable="false"
+                >
+
+            </span>
+
+            <span>Liên kết<br>với Apple</span>
+
+        </button>
+
+
+        <!-- Cài đặt -->
+        <button type="button" class="account-action-card">
+
+            <span class="account-action-icon">
+
+                <img
+                    src="./img/icon-setting.png"
+                    alt=""
+                    class="account-setting-icon-img"
+                    draggable="false"
+                >
+
+            </span>
+
+            <span>Cài đặt<br>tài khoản</span>
+
+        </button>
+
+    </div>
+</section>
+
+    </section>
+
+
+    <!-- TRUY VẤN GIAO DỊCH -->
+    <section class="transaction-query-section">
+        <h2>Truy vấn giao dịch</h2>
+
+       <div class="date-query-grid">
+
+    <label class="date-query-card">
+
+        <span class="date-query-label">
+            Từ ngày
+        </span>
+
+        <strong id="fromDateText">
+            10/07/2026
+        </strong>
+
+        <img
+            src="./img/icon-calendar-from.png"
+            class="calendar-from-icon-img"
+            alt=""
+        >
+
+        <input
+            type="date"
+            id="fromDateInput"
+            value="2026-07-10"
+            aria-label="Chọn ngày bắt đầu"
+        >
+
+    </label>
+
+
+    <label class="date-query-card">
+
+        <span class="date-query-label">
+            Đến ngày
+        </span>
+
+        <strong id="toDateText">
+            4/08/2026
+        </strong>
+
+        <img
+            src="./img/icon-calendar-to.png"
+            class="calendar-to-icon-img"
+            alt=""
+        >
+
+        <input
+            type="date"
+            id="toDateInput"
+            value="2026-07-16"
+            aria-label="Chọn ngày kết thúc"
+        >
+
+    </label>
+
+</div>
+
+        <button
+            type="button"
+            class="transaction-query-button"
+            id="transactionQueryButton"
+        >
+            Truy vấn
+        </button>
+
+        <p class="transaction-query-note">
+            Hệ thống hỗ trợ truy vấn lịch sử giao dịch trong vòng
+            1 năm kể từ ngày hiện tại
+        </p>
+    </section>
+
+
+    <!-- DANH SÁCH 20 GIAO DỊCH: JS TỰ TẠO -->
+    <section
+        class="transaction-history is-visible"
+        id="transactionHistory"
+        aria-label="Lịch sử giao dịch"
+    ></section>
+
+
+    <!-- TOAST -->
+    <div
+        class="copy-toast"
+        id="copyToast"
+        role="status"
+        aria-live="polite"
+    >
+        Đã sao chép số tài khoản
+    </div>
+
+</main>
+
+
+<!-- OVERLAY DÙNG CHUNG -->
+<div
+    class="transaction-sheet-overlay"
+    id="transactionSheetOverlay"
+    aria-hidden="true"
+></div>
+
+
+<!-- BOTTOM SHEET DÙNG CHUNG CHO CẢ 20 BILL -->
+<section
+    class="transaction-sheet"
+    id="transactionSheet"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+    aria-labelledby="sheetTitle"
+>
+    <div
+        class="transaction-sheet-drag-area"
+        id="transactionSheetDragArea"
+    >
+        <span class="transaction-sheet-handle"></span>
+    </div> 
+                    <!-- PHẦN Ở DƯỚI  -->
+    <div class="transaction-sheet-content">
+
+        <h2
+            class="transaction-sheet-title"
+            id="sheetTitle"
+        >
+            Chi tiết giao dịch
+        </h2>
+
+        <div class="transaction-sheet-amount">
+            <span
+    class="transaction-sheet-icon"
+    id="sheetIcon"
+>
+    <img
+        src="./img/icon-sheet-wallet.png"
+        class="transaction-sheet-wallet-icon-img"
+        alt=""
+    >
+</span>
+
+            <strong id="sheetAmount">0 VND</strong>
+        </div>
+
+     <!-- CHỈ HIỆN KHI LÀ GIAO DỊCH TIỀN RA -->
+<section
+    class="transaction-sheet-section"
+    id="sheetFromSection"
+    hidden
+>
+    <h3>Chuyển khoản từ</h3>
+
+    <div class="transaction-sheet-row">
+        <span>Tên tài khoản</span>
+
+        <strong id="sheetFromAccountName">
+            -
+        </strong>
+    </div>
+
+    <div class="transaction-sheet-row">
+        <span>Số tài khoản</span>
+
+        <strong id="sheetFromAccountNumber">
+            -
+        </strong>
+    </div>
+</section>
+
+
+<!-- THÔNG TIN TÀI KHOẢN ĐỐI TÁC -->
+<section
+    class="transaction-sheet-section"
+    id="sheetToSection"
+>
+    <h3 id="sheetDirectionTitle">
+        Chuyển khoản đến
+    </h3>
+
+    <div class="transaction-sheet-row">
+        <span>Tên tài khoản</span>
+
+        <strong id="sheetAccountName">
+            -
+        </strong>
+    </div>
+
+    <div class="transaction-sheet-row">
+        <span>Số tài khoản</span>
+
+        <strong id="sheetAccountNumber">
+            -
+        </strong>
+    </div>
+
+    <div
+        class="transaction-sheet-row
+               transaction-sheet-content-row"
+    >
+        <span>Nội dung</span>
+
+        <strong id="sheetContent">
+            -
+        </strong>
+    </div>
+</section>
+
+        <section class="transaction-sheet-footer">
+            <div class="transaction-sheet-row">
+                <span>Thời gian</span>
+                <strong id="sheetTime">-</strong>
+            </div>
+
+            <div class="transaction-sheet-row">
+                <span>Mã giao dịch</span>
+                <strong id="sheetCode">-</strong>
+            </div>
+        </section>
+
+        <button
+            type="button"
+            class="transaction-trace-button"
+            id="traceButton"
+        >
+            Tra soát giao dịch
+        </button>
+
+    </div>
+</section>
+
+
+<script src="./js/transaction.js"></script>
+</body>
+</html>
