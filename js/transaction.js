@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
             id: "OUT001",
             type: "outcome",
             amount: 69000000,
-            date: "2026-11-05",
+            date: "2026-11-25",
             time: "21:32:37",
             accountName: "VU HUY HOANG",
             accountNumber: "48875187",
