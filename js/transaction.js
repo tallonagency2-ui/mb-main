@@ -81,13 +81,13 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             id: "OUT002",
             type: "outcome",
-            amount: 7200000,
+            amount: 100000000,
             date: "2026-11-24",
-            time: "19:55:27",
-            accountName: "NGUYEN VAN ANH",
-            accountNumber: "7284659100",
+            time: "21:38:02",
+            accountName: "LAI THỊ NHIEN",
+            accountNumber: "2984369877",
             description:
-                "CUSTOMER TRAN TUAN ANH chuyen tien",
+                "ABD6EQL8QR",
             code: "FT26197849221050"
         },
 
